@@ -95,9 +95,9 @@ public class VariableMutation {
 String zero = "";
 
     for (int i = 0; i < 4; i++) {
-      System.out.println(zero = k + zero);
+      zero = k + zero;
     }
-
+    System.out.println(zero);
     }
 
 

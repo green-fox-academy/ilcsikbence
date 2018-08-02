@@ -16,14 +16,12 @@ public class DrawTriangle {
 
     System.out.println("Type in a number as many you want to be the triangle's height");
 
-    int height = scanner.nextInt();
-    String text = "";
-    String myText = "*";
+      int height = scanner.nextInt();
+      String text = "";
+      String myText = "*";
 
-    for (int i = 0; i < height; i++) {
-      System.out.println(text = text + myText);
-    }
-
-
+      for (int i = 0; i < height; i++) {
+        System.out.println(text = text + myText);
+      }
   }
 }
