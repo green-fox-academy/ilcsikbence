@@ -18,27 +18,41 @@ public class DrawPyramid {
     System.out.println("Type as many number as you want your pyramid's height to be");
 
     int height = scanner.nextInt();
-    String text = "";
-    String space = " ";
-    String myText = "*";
 
-    for(int i = 0; i < height;i++) {
-      for(int j = 0; j < height - i; j++) {
+    for (int myLines = 1; myLines <= height; myLines++) {
+      for (int mySpace = 1; mySpace <= height - myLines; mySpace++) {
         System.out.print(" ");
       }
-      for(int k = 0; k <= i; k++) {
-        System.out.print(myText);
 
-      }
+              for (int myStars = 1; myStars <= 2*myLines - 1; myStars++) {
+          System.out.print("*");
+        }
+
+
+//      if (height % 2 == 0){
+//      for (int myStars = myLines + 2; myStars >= height - myLines; myStars--) {
+//        System.out.print("*");
+//      }
+//      }
+//      if (height % 2 == 1){
+//        for (int myStars = myLines + 1; myStars >= height - myLines; myStars--) {
+//          System.out.print("*");
+//        }
+//      }
+
       System.out.println();
     }
-  }
-
-
-
-
-
-
 
   }
+
+
+}
+
+
+
+
+
+
+
+
 

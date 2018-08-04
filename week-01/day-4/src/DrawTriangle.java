@@ -22,6 +22,12 @@ public class DrawTriangle {
 
       for (int i = 0; i < height; i++) {
         System.out.println(text = text + myText);
+
+        //
+        // - = - + *
+        // * = * + *
+        // ** = ** + *
+        // ***
       }
   }
 }

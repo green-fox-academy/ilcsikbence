@@ -8,16 +8,12 @@ public class VariableMutation {
     System.out.println(a);
 
 
-
-
     int b = 100;
     // make it smaller by 7
 
     b -= 7;
 
     System.out.println(b);
-
-
 
 
     int c = 44;
@@ -28,8 +24,6 @@ public class VariableMutation {
     System.out.println(c);
 
 
-
-
     int d = 125;
     // please divide by 5 d's value
 
@@ -38,26 +32,20 @@ public class VariableMutation {
     System.out.println(d);
 
 
-
-
     int e = 8;
     // please cube of e's value
 
-    e *= e*e;
+    e *= e * e;
 
     System.out.println(e);
-
-
 
 
     int f1 = 123;
     int f2 = 345;
     // tell if f1 is bigger than f2 (print as a boolean)
 
-    boolean f1f2 = (f1>f2);
+    boolean f1f2 = (f1 > f2);
     System.out.println(f1f2);
-
-
 
 
     int g1 = 350;
@@ -73,7 +61,6 @@ public class VariableMutation {
 
     boolean divBoolean = h % 11 == 0;
     System.out.println(divBoolean);
-
 
 
     int i1 = 10;
@@ -92,13 +79,12 @@ public class VariableMutation {
 
     String k = "Apple";
     //fill the k variable with its content 4 times
-String zero = "";
+    String zero = "";
 
     for (int i = 0; i < 4; i++) {
       zero = k + zero;
     }
     System.out.println(zero);
-    }
-
 
   }
+}
