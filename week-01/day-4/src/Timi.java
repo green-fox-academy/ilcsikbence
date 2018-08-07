@@ -15,7 +15,7 @@ public class Timi {
     System.out.println("Your name is " + name + " and your age is " + age);
 
     int newArray[] = {1, 2, 3};
-      
+
 
   }
 }
