@@ -23,7 +23,7 @@ public class DrawDiamond {
     int height = scanner.nextInt();
 
     for (int myLines = 1; myLines <= height; myLines++) {
-      for (int mySpace = 1; mySpace <= height - myLines; mySpace++) {
+      for (int mySpace = 0; mySpace <= height - myLines; mySpace++) {
         System.out.print(" ");
       }
 
@@ -35,28 +35,31 @@ public class DrawDiamond {
     }
 
     if (height % 2 == 1) {
-      for (int i = 0; i < height + 4; i++) {
+      for (int i = 0; i < 2 * height + 1; i++) {
+        System.out.print("*");
+      }
+    } else if (height % 2 == 0) {
+      for (int i = 0; i < 2 * height + 1; i++) {
         System.out.print("*");
       }
     }
-      else if (height % 2 == 0){
-        for (int i = 0; i < height + 5; i++) {
-          System.out.print("*");
-      }
-    }
-        System.out.println();
+    System.out.println();
 
     for (int myLines = 1; myLines <= height; myLines++) {
-      for (int mySpace = 1; mySpace <= height - myLines; mySpace++) {
+
+      for (int c = 0; c < myLines; c++) {
         System.out.print(" ");
       }
 
-      for (int myStars = 1; myStars <= 2 * myLines - 1; myStars++) {
+      for (int v = 0; v <= (height - myLines) * 2; v++) {
         System.out.print("*");
       }
 
       System.out.println();
+
     }
 
+    System.out.println();
   }
+
 }

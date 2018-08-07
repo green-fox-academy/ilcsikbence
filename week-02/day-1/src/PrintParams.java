@@ -11,19 +11,33 @@ public class PrintParams {
     // printParams("first", "second", "third", "fourh")
     // ...
 
-    System.out.println("printParams(\""+ printParams() + "\")");
+
+
+    String[] numbers = {"first", "second", "third", "fourth", "fifth"};
+
+    printParams(numbers);
 
 
   }
 
+  public static void printParams(String[] numbers){
 
+    String zero = "";
 
-  public static String printParams(){
+    for (int i = 0; i < numbers.length; i++) {
+      if (i < numbers.length - 1) {
+        zero += "\"";
+        zero += numbers[i];
+        zero += "\", ";
+      } else {
+        zero += "\"";
+        zero += numbers[i];
+        zero += "\"";
+      }
+    }
 
-    String text= "text";
+    System.out.println(zero);
 
-    return printParams();
   }
-
 
 }

@@ -14,12 +14,28 @@ public class ParametricAverage {
     System.out.println("Type the amount of the numbers you want to enter");
     int amount = scanner.nextInt();
 
-    int myArray[] = new int[amount];
+    double
+        myArray[] = new double[amount];
 
     for (int i = 0; i < amount; i++) {
       int number = scanner.nextInt();
-      myArray[i] = number;
+      myArray[i] += number;
     }
+
+    System.out.println("Sum: " + Sum(myArray) + " Average: " + Avg(myArray));
+
+  }
+
+  public static double Sum(double[] ints) {
+    int result = 0;
+    for (double i : ints) {
+      result += i;
+    }
+    return result;
+  }
+
+  public static double Avg(double[] ints) {
+    return Sum(ints) / ints.length;
   }
 }
 

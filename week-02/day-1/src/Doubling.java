@@ -8,13 +8,12 @@ public class Doubling {
 
     int baseNum = 123;
 
-    System.out.println(doubling(+baseNum));
+    System.out.println(doubling(baseNum));
   }
 
   public static int doubling(int baseNum) {
-    int doubling = baseNum * baseNum;
+    int doubling = baseNum * 2;
     return doubling;
   }
-
 
 }
