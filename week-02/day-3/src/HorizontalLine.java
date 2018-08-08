@@ -5,38 +5,25 @@ import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class GoToCenter {
+public class HorizontalLine {
   public static void mainDraw(Graphics graphics) {
     // Create a line drawing function that takes 2 parameters:
     // The x and y coordinates of the line's starting point
-    // and draws a line from that point to the center of the canvas.
+    // and draws a 50 long horizontal line from that point.
     // Draw 3 lines with that function. Use loop for that.
 
-    int height = HEIGHT/2;
-    int width = WIDTH/2;
+    Scanner scanner = new Scanner(System.in);
 
-//    Scanner scanner = new Scanner(System.in);
-    int userInput1 = 0;
-    int userInput2 = 0;
-    int userInput3 = 10;
-
-    int newArray[] = drawLinesToCenter(userInput1, userInput2, userInput3);
-    System.out.println(newArray[0] + " and " + newArray[1]);
-
-    graphics.drawLine(newArray[0], newArray[1], width, height);
-
+    for (int i = 1; i <= 3; i++) {
+      int userInput1 = scanner.nextInt();
+      int userInput2 = scanner.nextInt();
+      drawHorizontalLine(userInput1, userInput2, graphics);
+    }
   }
 
-  public static int[] drawLinesToCenter(int userInput1, int userInput2, int userInput3){
-
-    for (int i = 0; i < 3; i++) {
-      userInput1 =+ userInput3;
-      userInput2 =+ userInput3;
-
-      return new int[]{userInput1};
-    }
-
-    return new int[]{userInput1, userInput2};
+  public static void drawHorizontalLine(int userInput1, int userInput2, Graphics gf) {
+    
+    gf.drawLine(userInput2, userInput1, userInput2 + 50, userInput1);
   }
 
   // Don't touch the code below
