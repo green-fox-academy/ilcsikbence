@@ -24,25 +24,24 @@ public class RainbowBoxFunction {
     hashColors.put(7, new Color(127, 0, 255));
 
     int input2 = 0;
-    int height = 343;
+    int height = 320;
     int input = height;
 
     for (int i = 1; i <= 7 ; i++) {
-        input2 = i;
-
+      input2 = i;
       rainbowSquare(input, input2, hashColors, graphics);
       input -= 40;
     }
   }
 
-  public static void rainbowSquare(int input, int input2, HashMap hashColors, Graphics graphics) {
-    graphics.setColor((Color)hashColors.get(input2));
+  public static void rainbowSquare(int input, int input2, HashMap<Integer, Color> hashColors, Graphics graphics) {
+    graphics.setColor(hashColors.get(input2));
     graphics.fillRect(WIDTH / 2 - input / 2, HEIGHT / 2 - input / 2, input, input);
   }
 
   // Don't touch the code below
   static int WIDTH = 320;
-  static int HEIGHT = 343;
+  static int HEIGHT = 320;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");
