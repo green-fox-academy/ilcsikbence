@@ -22,7 +22,7 @@ public class HorizontalLine {
   }
 
   public static void drawHorizontalLine(int userInput1, int userInput2, Graphics gf) {
-    
+
     gf.drawLine(userInput2, userInput1, userInput2 + 50, userInput1);
   }
 

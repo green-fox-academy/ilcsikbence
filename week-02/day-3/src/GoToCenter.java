@@ -12,31 +12,20 @@ public class GoToCenter {
     // and draws a line from that point to the center of the canvas.
     // Draw 3 lines with that function. Use loop for that.
 
-    int height = HEIGHT/2;
-    int width = WIDTH/2;
+    Scanner scanner = new Scanner(System.in);
 
-//    Scanner scanner = new Scanner(System.in);
-    int userInput1 = 0;
-    int userInput2 = 0;
-    int userInput3 = 10;
-
-    int newArray[] = drawLinesToCenter(userInput1, userInput2, userInput3);
-    System.out.println(newArray[0] + " and " + newArray[1]);
-
-    graphics.drawLine(newArray[0], newArray[1], width, height);
+    for (int i = 1; i <= 3 ; i++) {
+      int userInput1 = scanner.nextInt();
+      int userInput2 = scanner.nextInt();
+      drawLinesToCenter(userInput1, userInput2, graphics);
+    }
 
   }
 
-  public static int[] drawLinesToCenter(int userInput1, int userInput2, int userInput3){
+  public static void drawLinesToCenter(int userInput1, int userInput2, Graphics graphics) {
 
-    for (int i = 0; i < 3; i++) {
-      userInput1 =+ userInput3;
-      userInput2 =+ userInput3;
+    graphics.drawLine(userInput1, userInput2, WIDTH/2, HEIGHT/2);
 
-      return new int[]{userInput1};
-    }
-
-    return new int[]{userInput1, userInput2};
   }
 
   // Don't touch the code below
