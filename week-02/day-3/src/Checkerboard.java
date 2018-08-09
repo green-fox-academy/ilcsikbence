@@ -12,14 +12,15 @@ public class Checkerboard {
     int squarePos = 20;
 
     int xySquare = 0;
-    for (int i = 0; i < HEIGHT / squareSize; i++) {
-      for (int j = 0; j < WIDTH / squareSize; j++) {
-        graphics.fillRect(2 * xySquare, i * squarePos, squareSize, squareSize);
+
+    for (int i = 0; i < HEIGHT; i += 2 * squareSize) {
+      for (int j = 0; j < WIDTH; j ++) {
+        graphics.fillRect(i, j, squareSize, squareSize);
         xySquare += squareSize;
       }
-      for (int k = 1; k <= WIDTH / squareSize; k++) {
+      for (int k = 0; k <= WIDTH; k ++) {
         xySquare += squareSize;
-        graphics.fillRect(2 * xySquare, squarePos + squarePos, squareSize, squareSize);
+        graphics.fillRect(i , squareSize + squarePos, squareSize, squareSize);
       }
     }
   }
