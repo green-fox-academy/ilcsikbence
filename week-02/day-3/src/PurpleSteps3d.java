@@ -4,19 +4,19 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class PurpleSteps3d {
   public static void mainDraw(Graphics graphics) {
     // Reproduce this:
     // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
-    int sizeOfSquare = 20;
+    int sizeOfSquare = 10;
 
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 6; i++) {
       graphics.setColor(new Color(177, 69, 243));
-      graphics.fillRect(i * sizeOfSquare + sizeOfSquare, i * sizeOfSquare + sizeOfSquare, sizeOfSquare, sizeOfSquare);
+      graphics.fillRect(sizeOfSquare, sizeOfSquare, sizeOfSquare, sizeOfSquare);
       graphics.setColor(Color.BLACK);
-      graphics.drawRect(i * sizeOfSquare + sizeOfSquare, i * sizeOfSquare + sizeOfSquare, sizeOfSquare, sizeOfSquare);
-
+      graphics.drawRect(sizeOfSquare, sizeOfSquare, sizeOfSquare, sizeOfSquare);
+      sizeOfSquare *= 2;
     }
   }
 
