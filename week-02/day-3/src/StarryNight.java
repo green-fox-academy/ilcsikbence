@@ -1,7 +1,5 @@
 import javax.swing.*;
-
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class StarryNight {
@@ -15,11 +13,10 @@ public class StarryNight {
     graphics.setColor(Color.BLACK);
     graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
-
     int amountOfStars = (int) (50 + Math.random() * 150);
 
     for (int i = 0; i < amountOfStars; i++) {
-      int RGB = (int) (100 + Math.random() * 155);
+      int RGB = (int) (10 + Math.random() * 245);
       graphics.setColor(new Color(RGB, RGB, RGB));
       int x1 = (int) (0 + Math.random() * WIDTH);
       int y1 = (int) (0 + Math.random() * HEIGHT);

@@ -1,7 +1,5 @@
 import javax.swing.*;
-
 import java.awt.*;
-
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class PurpleSteps3dV2 {
@@ -9,16 +7,14 @@ public class PurpleSteps3dV2 {
     // Reproduce this:
     // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
-    int sizeOfSquare = 20;
-    int originalSquare = 20;
-    int posOfSquare = 20;
+    int sizeOfSquare = 30;
+    int originalSquare = 30;
 
     for (int i = 0; i < 6; i++) {
 
       graphics.setColor(new Color(177, 69, 243));
-      graphics.fill3DRect(sizeOfSquare + i * (sizeOfSquare - 40) / 2, sizeOfSquare + i * (sizeOfSquare - 40) / 2, sizeOfSquare, sizeOfSquare, true);
+      graphics.fill3DRect(sizeOfSquare + i * (sizeOfSquare - 2 * originalSquare) / 2, sizeOfSquare + i * (sizeOfSquare - 2 * originalSquare) / 2, sizeOfSquare, sizeOfSquare, true);
       sizeOfSquare += originalSquare;
-
     }
   }
 
