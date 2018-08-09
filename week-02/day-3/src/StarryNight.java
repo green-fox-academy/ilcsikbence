@@ -16,7 +16,7 @@ public class StarryNight {
     graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
 
-    int amountOfStars = (int) (100 + Math.random() * 100);
+    int amountOfStars = (int) (50 + Math.random() * 150);
 
     for (int i = 0; i < amountOfStars; i++) {
       int RGB = (int) (100 + Math.random() * 155);
