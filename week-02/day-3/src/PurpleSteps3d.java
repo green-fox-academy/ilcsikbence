@@ -10,13 +10,12 @@ public class PurpleSteps3d {
     // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
 
     int sizeOfSquare = 10;
+    int posOfSquare = 10;
 
     for (int i = 0; i < 6; i++) {
       graphics.setColor(new Color(177, 69, 243));
-      graphics.fillRect(sizeOfSquare, sizeOfSquare, sizeOfSquare, sizeOfSquare);
-      graphics.setColor(Color.BLACK);
-      graphics.drawRect(sizeOfSquare, sizeOfSquare, sizeOfSquare, sizeOfSquare);
-      sizeOfSquare *= 2;
+      graphics.fill3DRect(sizeOfSquare, sizeOfSquare, posOfSquare, posOfSquare, true);
+      sizeOfSquare *= Math.sqrt(3);
     }
   }
 

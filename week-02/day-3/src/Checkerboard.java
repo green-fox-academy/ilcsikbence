@@ -8,8 +8,20 @@ public class Checkerboard {
   public static void mainDraw(Graphics graphics) {
     // Fill the canvas with a checkerboard pattern.
 
+    int squareSize = 20;
+    int squarePos = 20;
 
-
+    int xySquare = 0;
+    for (int i = 0; i < HEIGHT / squareSize; i++) {
+      for (int j = 0; j < WIDTH / squareSize; j++) {
+        graphics.fillRect(2 * xySquare, i * squarePos, squareSize, squareSize);
+        xySquare += squareSize;
+      }
+      for (int k = 1; k <= WIDTH / squareSize; k++) {
+        xySquare += squareSize;
+        graphics.fillRect(2 * xySquare, squarePos + squarePos, squareSize, squareSize);
+      }
+    }
   }
 
   // Don't touch the code below
