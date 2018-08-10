@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class BinaryToDecimal {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+
     String number = scanner.nextLine();
+
     ArrayList<String> arrayList = new ArrayList<>();
     arrayList.addAll(Arrays.asList(number.split("")));
+
     int arraySize = arrayList.size();
 
     ArrayList<Integer> arrayNumbers = new ArrayList<>();
