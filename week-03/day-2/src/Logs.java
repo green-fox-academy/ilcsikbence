@@ -1,33 +1,58 @@
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Logs {
   public static void main(String[] args) {
-    // Read all data from 'log.txt'.
-    // Each line represents a log message from a web server
-    // Write a function that returns an array with the unique IP adresses.
-    // Write a function that returns the GET / POST request ratio.
+
+    ArrayList<String> arrayList = new ArrayList<String>();
 
     Path filePath = Paths.get("log.txt");
-    for (int i = 0; i < ipAddress(filePath).length; i++) {
-      System.out.println(ipAddress(filePath)[i]);
+
+    try {
+      arrayList.addAll(Files.readAllLines(filePath));
+    } catch (Exception ex) {
+      System.out.println("oops");
     }
 
+    System.out.println(ipAddress(arrayList));
+    System.out.println(ratioGETPOST(arrayList));
 
   }
 
-  public static Object[] ipAddress (Path filePath) {
-    ArrayList<String> arrayList = new ArrayList<>();
-    try {
-      Files.readAllLines(filePath).addAll(arrayList);
-      return arrayList.toArray();
-    } catch (Exception ex) {
-      System.out.println("error");
+  public static ArrayList<String> ipAddress (ArrayList<String> lines){
+
+    ArrayList<String> uniqueList = new ArrayList<>();
+
+    for (int i = 0; i < lines.size(); i++) {
+      String ip = lines.get(i).split("   ")[1];
+
+      if (!uniqueList.contains(ip)){
+        uniqueList.add(ip);
+      }
     }
-    return arrayList.toArray();
+
+    return uniqueList;
+  }
+
+  public static double ratioGETPOST(ArrayList<String> lines){
+
+    double getZero = 0;
+    double postZero = 0;
+    double result;
+
+    for (int i = 0; i < lines.size(); i++) {
+      String GETPOST = lines.get(i).split("   ")[2].split(" ")[0];
+
+      if (GETPOST.equals("GET")){
+        getZero += 1;
+      } else {
+        postZero += 1;
+      }
+    }
+
+    result = getZero / postZero;
+    return result;
   }
 }
