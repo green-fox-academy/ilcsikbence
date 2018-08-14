@@ -9,7 +9,7 @@ public class CountLines {
     // then returns the number of lines the file contains.
     // It should return zero if it can't open the file, and
     // should not raise any error.
-    String fileName = "amy-file.txt";
+    String fileName = "my-file.txt";
     numberOfLines(fileName);
   }
   public static void numberOfLines (String fileName) {
