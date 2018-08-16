@@ -19,7 +19,7 @@ public class Pirate {
     }
   }
 
-  public String dies() {
+  public String die() {
     if (rum > 6) {
       return "He's dead.";
     } else {

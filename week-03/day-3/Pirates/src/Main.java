@@ -6,8 +6,6 @@ public class Main {
     Pirate cptSparrow = new Pirate();
     Parrot parrot = new Parrot();
 
-    cptSparrow.dies();
-
     for (int i = 1; i <= 6; i++) {
       if (i <= 5) {
         cptSparrow.drinkSomeRum();
@@ -21,7 +19,7 @@ public class Main {
     cptSparrow.drinkSomeRum();
     cptSparrow.drinkSomeRum();
 
-    cptSparrow.dies();
+    cptSparrow.die();
 
   }
 }

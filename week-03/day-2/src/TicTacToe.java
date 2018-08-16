@@ -29,7 +29,7 @@ public class TicTacToe {
     array[1][2] = O; // 6
     array[2][0] = O; // 7
     array[2][1] = X; // 8
-    array[2][2] = X; // 9
+    array[2][2] = O; // 9
 
     HashMap<Integer, Integer> table = new HashMap<>();
 
@@ -83,16 +83,16 @@ public class TicTacToe {
 
 
 
-    System.out.println(table);
-
-    for (int i = 0; i < 3; i++) {
-      for (int j = 0; j < 3; j++) {
-        if (i == j) {
-          System.out.print(array[i][j]);
-        }
-      }
-      System.out.println();
-    }
+//    System.out.println(table);
+//
+//    for (int i = 0; i < 3; i++) {
+//      for (int j = 0; j < 3; j++) {
+//        if (i == j) {
+//          System.out.print(array[i][j]);
+//        }
+//      }
+//      System.out.println();
+//    }
 
 //  public static String result(String filename) {
 //
