@@ -15,6 +15,10 @@ public class HexagonalFractal {
 //    32        hexagon.addPoint( 175, 199 ); WIDTH * 3 / 4, HEIGHT
 //    33        hexagon.addPoint(  75, 199 ); WIDTH / 4, HEIGHT
 //    34        hexagon.addPoint(  25, 112 ); 0, HEIGHT / 2
+    int xpoints[] = {WIDTH / 4, WIDTH * 3 / 4, WIDTH, WIDTH * 3 / 4, WIDTH / 4, 0};
+    int ypoints[] = {0, 0, HEIGHT / 2, HEIGHT, HEIGHT, HEIGHT / 2};
+    int npoints = 6;
+    graphics.drawPolygon(xpoints, ypoints, npoints);
 
   }
 
@@ -26,10 +30,6 @@ public class HexagonalFractal {
 //    graphics.drawLine(WIDTH, HEIGHT / 2, x * 3, HEIGHT);
 //    graphics.drawLine(WIDTH, HEIGHT / 2, x * 3, 0);
 
-    int xpoints[] = {WIDTH / 4, WIDTH * 3 / 4, WIDTH, WIDTH * 3 / 4, WIDTH / 4, 0};
-    int ypoints[] = {0, 0, HEIGHT / 2, HEIGHT, HEIGHT, HEIGHT / 2};
-    int npoints = 6;
-    graphics.drawPolygon(xpoints, ypoints, npoints);
   }
 
   public static void drawFractal(int x, int y, Graphics graphics) {
