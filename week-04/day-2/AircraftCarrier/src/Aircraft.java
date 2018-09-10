@@ -6,7 +6,11 @@ public class Aircraft {
   String type;
   boolean fillQueue;
 
-  public Aircraft() {
+  public Aircraft(int currentAmmo, int maxAmmo, int baseDamage, int damageAll) {
+    this.currentAmmo = currentAmmo;
+    this.maxAmmo = maxAmmo;
+    this.baseDamage = baseDamage;
+    this.damageAll = damageAll;
   }
 
   public void fight() {
