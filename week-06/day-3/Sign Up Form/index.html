@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 
+<!--
+Made by Bence Ilcsik
+12.09.2018.
+-->
+
 <html>
 	<head>
 		<title>Sign up</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
+		<!--Submit function added, returns false when passwords do not match-->
 		<form action=https://newsletter-ws.herokuapp.com/register onsubmit="return myFunction()" method="post" style="text-align: left">
-				<div id="divInput">
-				<p class="title">Sign up</p>
-				<input type = "text" name = "name" placeholder="Username" required />
-				<span class = "tick"></span>
-				<input type = "text" name = "email" placeholder="E-mail" required />
-				<span class = "tick"></span>
-				<input type = "text" id="pass1" name = "password" placeholder="Password" required />
-				<span class = "tick"></span>
-				<input type = "text" id="pass2" name = "passwordConfirmation" placeholder="Retype password" required />
-				<span class = "tick"></span>
-				<script>
-    			function myFunction() {
-        		var pass1 = document.getElementById("pass1").value;
-        		var pass2 = document.getElementById("pass2").value;
-       			if (pass1 != pass2) {
-          		alert("Passwords do not match");
-            	document.getElementById("pass1").style.borderColor = "#E34234";
-            	document.getElementById("pass2").style.borderColor = "#E34234";
-							return false;
-        		}
-    			}
-				</script>
-				</div>
-				<div id="divOr">
-				<h2 class="circle">OR</h2>
-				</div>
-				<div id="divButtons">
-				<button type="button" id="facebookLogin">Log in with facebook</button><br>
-        <button type="button" id="twitterLogin">Log in with Twitter</button><br>
-        <button type="button" id="googlePlusLogin">Log in with Google+</button>
-				</div>
-				<div id="divSubmit">
-				<input type = "submit" value = "SIGN ME UP">
-				</div>
-				</form>
+			<!--Title-->
+			<div id="divInput">
+			<p class="title">Sign up</p>
+			<!--Username-->
+			<input type = "text" name = "name" placeholder="Username" required />
+			<span class = "tick"></span>
+			<!--E-mail-->
+			<input type = "text" name = "email" placeholder="E-mail" required />
+			<span class = "tick"></span>
+			<!--Password-->
+			<input type = "text" id="pass1" name = "password" placeholder="Password" required />
+			<span class = "tick"></span>
+			<!--Password Confirmation-->
+			<input type = "text" id="pass2" name = "passwordConfirmation" placeholder="Retype password" required />
+			<span class = "tick"></span>
+			<!--JavaScript for alerting when passwords do not match-->
+			<script>
+    		function myFunction() {
+       		var pass1 = document.getElementById("pass1").value;
+       		var pass2 = document.getElementById("pass2").value;
+      		if (pass1 != pass2) {
+         		alert("Passwords do not match");
+           	document.getElementById("pass1").style.borderColor = "#E34234";
+           	document.getElementById("pass2").style.borderColor = "#E34234";
+						return false;
+       		}
+    		}
+			</script>
+			<!--OR symbol-->
+			</div>
+			<div id="divOr">
+			<h2 class="circle">OR</h2>
+			</div>
+			<!--Buttons for logging in with social media accounts-->
+			<div id="divButtons">
+			<button type="button" id="facebookLogin">Log in with facebook</button><br>
+      <button type="button" id="twitterLogin">Log in with Twitter</button><br>
+      <button type="button" id="googlePlusLogin">Log in with Google+</button>
+			</div>
+			<!--Submit button-->
+			<div id="divSubmit">
+			<input type = "submit" value = "SIGN ME UP">
+			</div>
+		</form>
 	</body>
 </html>
