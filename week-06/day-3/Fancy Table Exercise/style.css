@@ -1,0 +1,94 @@
+/*
+	Made by Bence Ilcsik
+	12.09.2018.
+*/
+
+/* body settings */
+body {
+	background: #3E94EC;
+	text-indent: 30px;
+	font-weight: 100;
+	color: #72758E;
+}
+
+/* td settings */
+td {
+    border:  2px solid #C8CAD5;
+		font-size: 26px;
+}
+
+/* Table settings */
+table {
+	margin: 40px auto;
+	font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+  width: 750px;
+	border-collapse: collapse;
+}
+
+/* Table header settings */
+thead {
+	text-align: left;
+	color: white;
+	border-bottom: 4px solid #9EA7AF;	
+	font-size: 30px;
+	color: #9EA7AF;
+}
+
+tr {
+	line-height: 75px;
+}
+
+/* th settings */
+th {
+	border-right: 2px solid #30353F;
+	background-color: #1B1E24;
+	line-height: 90px;
+}
+
+/* Sets background of even rows */
+tr:nth-child(even) {
+	background: #FFFFFF;
+}
+
+/* Sets background of odd rows */
+tr:nth-child(odd) {
+	background: #EBEBEB;
+}
+
+/* Removes top border */
+tr:first-child td{
+	border-top: none;
+}
+
+/* Removes bottom side border and rounds bottom left corner */
+#lastColumnLeft {
+	border-bottom: none;
+	border-bottom-left-radius: 5px; 
+}
+
+/* Removes bottom side border and rounds bottom right corner */
+#lastColumnRight {
+	border-bottom: none;
+	border-bottom-right-radius: 5px; 
+}
+
+/* Removes left side border */
+tr td:first-child{
+	border-left: none;
+}
+
+/* Removes right side border */
+tr td:last-child{
+	border-right: none;
+}
+
+/* Removes right border of header and rounds top right corner */
+tr th:last-child {
+	border-top-right-radius: 5px;
+	border-right: none;
+}
+
+/* Rounds top left corner */
+tr th:first-child {
+	border-top-left-radius: 5px; 
+}
