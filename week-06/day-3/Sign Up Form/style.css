@@ -26,7 +26,8 @@ body {
 }
 
 /* "text" type input settings */
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   display: block;
   border: 0;
 	border-bottom: 2px solid #DDDDDD;

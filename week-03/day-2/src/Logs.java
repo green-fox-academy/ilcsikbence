@@ -5,7 +5,9 @@ import java.util.*;
 
 public class Logs {
   public static void main(String[] args) {
+
     ArrayList<String> arrayList = new ArrayList<String>();
+
     Path filePath = Paths.get("log.txt");
 
     try {
@@ -29,6 +31,7 @@ public class Logs {
         uniqueList.add(ip);
       }
     }
+
     return uniqueList;
   }
 
