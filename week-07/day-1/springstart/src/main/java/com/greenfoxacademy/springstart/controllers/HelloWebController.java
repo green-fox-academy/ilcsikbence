@@ -13,8 +13,10 @@ public class HelloWebController {
 
   @RequestMapping("/web/greeting")
   public String greeting(@RequestParam(value = "name", defaultValue = " World")  String name, Model model) {
+
+
     model.addAttribute("name", name);
-    model.addAttribute("id", greetingCounter);
+    model.addAttribute("id", greetingCounter.incrementAndGet());
     return "greeting";
   }
 }
