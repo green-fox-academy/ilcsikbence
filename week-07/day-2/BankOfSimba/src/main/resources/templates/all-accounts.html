@@ -3,6 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>All accounts</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+        tr:nth-child(odd) {
+            color: white;
+            background-color: rgb(0,0,0);
+        }
+
+        tr:nth-child(even) {
+            color: white;
+            background-color: rgb(50,50,50);
+        }
+
+        td {
+            width: 150px;
+
+        }
+
+        table {
+            margin: 30px auto;
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <table>
@@ -11,13 +37,15 @@
                 <td>Name</td>
                 <td>Balance</td>
                 <td>Type</td>
+                <td>Status</td>
             </tr>
         </thead>
         <tbody>
             <tr th:each="account : ${BankAccounts}">
-                <td th:text="${account.name}">
+                <td th:text="${account.name}" th:style="${account.isKing()} ? 'background-color: orange; color: black'">
                 <td th:text="${account.balance}">
                 <td th:text="${account.animalType}">
+                <td th:text="${account.isBad()} ? 'Bad Guy' : 'Good One'">
             </tr>
         </tbody>
     </table>

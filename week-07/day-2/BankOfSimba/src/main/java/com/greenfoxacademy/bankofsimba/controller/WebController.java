@@ -22,7 +22,7 @@ public class WebController {
 
   @GetMapping(value = "/show")
   public String showFields(Model model) {
-    model.addAttribute("BankAccount", bankAccountRepository.getBankAccounts().get(0));
+    model.addAttribute("BankAccount", bankAccountService.getAccountById(0));
     return "bank-account-info";
   }
 
@@ -31,6 +31,4 @@ public class WebController {
     model.addAttribute("BankAccounts", bankAccountService.showListOfAccounts());
     return "all-accounts";
   }
-
-
 }

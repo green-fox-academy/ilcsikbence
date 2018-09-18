@@ -12,11 +12,11 @@ public class BankAccountRepository {
 
   public BankAccountRepository() {
     bankAccounts = new ArrayList<>();
-    bankAccounts.add(new BankAccount("Simba", 2000, "lion"));
-    bankAccounts.add(new BankAccount("Pumbaa", 1000, "warthog"));
-    bankAccounts.add(new BankAccount("Timon", 2500, "meerkat"));
-    bankAccounts.add(new BankAccount("Nala", 2700, "lion"));
-    bankAccounts.add(new BankAccount("Mufasa", 8900, "lion"));
+    bankAccounts.add(new BankAccount("Simba", 2000, "lion", false, false));
+    bankAccounts.add(new BankAccount("Pumbaa", 1000, "warthog", false, false));
+    bankAccounts.add(new BankAccount("Timon", 2500, "meerkat", false, false));
+    bankAccounts.add(new BankAccount("Nala", 2700, "lion", false, false));
+    bankAccounts.add(new BankAccount("Mufasa", 8900, "lion", true, false));
   }
 
   public List<BankAccount> getBankAccounts() {
