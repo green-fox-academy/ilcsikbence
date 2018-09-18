@@ -2,17 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"  />
-    <title th:></title>
+    <title th:text="${BankAccount.name} + '\'s informations'"></title>
 </head>
 <body>
-    <table>
-        <thead>
-        <tr th:object="${BankAccount}">
-            <td th:text="*${name}"></td>
-            <td th:text="*${balance}"></td>
-            <td th:text="*${animalType}"></td>
-        </tr>
-        </thead>
-    </table>
+    <p th:text="${BankAccount.name}"></p>
+    <p th:text="${BankAccount.balance}"></p>
+    <p th:text="${BankAccount.animalType}"></p>
 </body>
 </html>
