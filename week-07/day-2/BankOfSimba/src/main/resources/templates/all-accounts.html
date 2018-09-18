@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All accounts</title>
+    <title>Bank of Simba</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
     <style>
         body {
             background-color: aqua;
@@ -18,9 +19,14 @@
             background-color: rgb(50,50,50);
         }
 
+        thead {
+            font-size: 20px;
+            line-height: 28px;
+            text-indent: 5px;
+        }
+
         td {
             width: 150px;
-
         }
 
         table {
@@ -42,12 +48,13 @@
         </thead>
         <tbody>
             <tr th:each="account : ${BankAccounts}">
-                <td th:text="${account.name}" th:style="${account.isKing()} ? 'background-color: orange; color: black'">
+                <td th:text="${account.isKing()} ? ${account.name} + ' 👑' : ${account.name}" th:style="${account.isKing()} ? 'background-color: orange; color: black'">
                 <td th:text="${account.balance}">
                 <td th:text="${account.animalType}">
                 <td th:text="${account.isBad()} ? 'Bad Guy' : 'Good One'">
             </tr>
         </tbody>
     </table>
+
 </body>
 </html>
