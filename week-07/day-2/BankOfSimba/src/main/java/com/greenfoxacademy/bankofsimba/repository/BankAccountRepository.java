@@ -17,6 +17,7 @@ public class BankAccountRepository {
     bankAccounts.add(new BankAccount("Timon", 2500, "meerkat", false, false));
     bankAccounts.add(new BankAccount("Nala", 2700, "lion", false, false));
     bankAccounts.add(new BankAccount("Mufasa", 8900, "lion", true, false));
+    bankAccounts.add(new BankAccount("Timi", 4206969, "pigcat", true, true));
   }
 
   public List<BankAccount> getBankAccounts() {
