@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface StudentService {
-  public void save(String student);
-  public List<String> findAll();
+  void save(String student);
+  List<String> findAll();
+  int count();
 }

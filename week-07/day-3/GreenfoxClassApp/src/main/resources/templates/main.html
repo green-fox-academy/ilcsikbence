@@ -5,6 +5,7 @@
     <title>Main page</title>
 </head>
 <body>
-    <a th:href="@{/gfa/list}">All students</a>
+    <p th:utext="'Current students number: ' + ${counter}" />
+    <a href="/gfa/list">All students</a>
 </body>
 </html>

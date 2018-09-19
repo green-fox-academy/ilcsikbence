@@ -16,10 +16,17 @@ public class StudentServiceImpl implements StudentService {
     names.add("John");
   }
 
+  @Override
   public List<String> findAll() {
     return names;
   }
 
+  @Override
+  public int count() {
+    return names.size();
+  }
+
+  @Override
   public void save(String student) {
     names.add(student);
   }
