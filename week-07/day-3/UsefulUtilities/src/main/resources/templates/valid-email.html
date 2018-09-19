@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>E-mail validity</title>
+</head>
+<body>
+    <h1 th:utext="${email} ? ${string} + ' is valid' : ${string} + ' is not valid'" th:style="${email} ? 'color: green' : 'color: red'"/>
+</body>
+</html>
