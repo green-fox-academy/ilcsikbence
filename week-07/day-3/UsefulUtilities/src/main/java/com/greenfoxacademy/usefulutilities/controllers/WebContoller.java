@@ -42,4 +42,10 @@ public class WebContoller {
     return "valid-email";
   }
 
+  @GetMapping(value = "/caesar")
+  public String caesarCodec(Model model, @RequestParam(value = "text") String text, @RequestParam(value = "number") int number) {
+    model.addAttribute("codec", utilityService.caesar(text, number));
+    return "caesar";
+  }
+
 }
