@@ -40,8 +40,4 @@ public class UtilityService {
       return false;
     }
   }
-
-  public String getEmail(String email) {
-    return email;
-  }
 }

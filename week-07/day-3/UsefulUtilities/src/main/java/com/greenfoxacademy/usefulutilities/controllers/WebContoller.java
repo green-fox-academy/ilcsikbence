@@ -37,7 +37,7 @@ public class WebContoller {
 
   @GetMapping(value = "/useful/email")
   public String emailValidation(Model model, @RequestParam(value = "email") String email) {
-    model.addAttribute("string", utilityService.getEmail(email));
+    model.addAttribute("string", email);
     model.addAttribute("email", utilityService.validateEmail(email));
     return "valid-email";
   }
