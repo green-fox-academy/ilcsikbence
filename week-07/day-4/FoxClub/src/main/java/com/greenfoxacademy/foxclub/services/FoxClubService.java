@@ -10,4 +10,7 @@ public interface FoxClubService {
   void changeFood(String name, String food);
   void changeDrink(String name, String drink);
   List<String> changesList(String name);
+  void addToTricksList(String name, String trick);
+  void addNewFox(String name);
+  List<Fox> getAllFoxes();
 }

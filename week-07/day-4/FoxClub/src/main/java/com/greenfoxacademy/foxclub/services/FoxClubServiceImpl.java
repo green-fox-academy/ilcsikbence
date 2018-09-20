@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -57,4 +58,34 @@ public class FoxClubServiceImpl implements FoxClubService {
     }
     return changes;
   }
+
+  @Override
+  public void addToTricksList(String name, String trick) {
+    List<String> newList = new ArrayList<>();
+    for (int i = 0; i < getFoxByName(name).getTricks().size(); i++) {
+      newList.add(getFoxByName(name).getTricks().get(i));
+    }
+    newList.add(trick);
+
+    getFoxByName(name).setTricks(newList);
+  }
+
+  @Override
+  public void addNewFox(String name) {
+    Fox fox = new Fox();
+    fox.setName(name);
+    List<Fox> newFoxList = new ArrayList<>();
+    for (int i = 0; i < foxClubRepository.getFoxList().size(); i++) {
+      newFoxList.add(foxClubRepository.getFoxList().get(i));
+    }
+    newFoxList.add(fox);
+    foxClubRepository.setFoxList(newFoxList);
+  }
+
+  @Override
+  public List<Fox> getAllFoxes() {
+    return foxClubRepository.getFoxList();
+  }
+
+
 }

@@ -18,10 +18,11 @@ public class MainController {
   @GetMapping(value = "/")
   public String getMainPage(@RequestParam(value = "name", required = false) String name, Model model) {
     if (name == null)
-      return "login";
+      return "redirect:login";
     else
       model.addAttribute("fox", foxClubService.getFoxByName(name));
       return "index";
+
   }
 
   @GetMapping(value = "/login")
@@ -59,6 +60,7 @@ public class MainController {
   @GetMapping(value = "/actionHistory")
   public String getActionHistoryPage(@RequestParam(value = "name") String name, Model model) {
     model.addAttribute("changes", foxClubService.changesList(name));
+    model.addAttribute("fox", foxClubService.getFoxByName(name));
     return "action-history";
   }
 
@@ -70,5 +72,23 @@ public class MainController {
       model.addAttribute("fox", foxClubService.getFoxByName(name));
       return "trick-center";
     }
+  }
+
+  @PostMapping(value = "/trickCenter")
+  public String postTrickCenterPage(@RequestParam(value = "name") String name,
+                                    @RequestParam(value = "trickName") String trickName) {
+    foxClubService.addToTricksList(name, trickName);
+    return "redirect:?name=" + name;
+  }
+
+  @GetMapping(value = "/register")
+  public String getRegistrationPage() {
+    return "register";
+  }
+
+  @PostMapping(value = "/register")
+  public String postRegistrationPage(@RequestParam(value = "foxName") String foxName) {
+    foxClubService.addNewFox(foxName);
+    return "redirect:login";
   }
 }

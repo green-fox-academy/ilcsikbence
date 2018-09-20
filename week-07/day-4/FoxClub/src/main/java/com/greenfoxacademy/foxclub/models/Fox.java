@@ -1,5 +1,6 @@
 package com.greenfoxacademy.foxclub.models;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class Fox {
   }
 
   public Fox() {
+    this.tricks = new ArrayList<>();
     this.food = "pizza";
     this.drink = "Coca Cola";
   }

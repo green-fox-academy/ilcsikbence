@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Nutrition Store</title>
+    <title>Trick Center</title>
 </head>
 <body>
     <ul>
@@ -11,13 +11,15 @@
         <li><a th:href="@{'/trickCenter/?name=' + ${fox.name}}">Trick Center</a></li>
         <li><a th:href="@{'/actionHistory/?name=' + ${fox.name}}">Action history</a></li>
     </ul>
-    <form th:action="@{'/nutritionStore?name=' + ${fox.name}}" method="post">
-        <label for="tricks">Tricks</label>
-        <select name="trickName" id="tricks">
-            <option value="pizza">Pizza</option>
-            <option value="hot dog">Hot Dog</option>
-            <option value="spaghetti">Spaghetti</option>
-            <option value="hamburger">Hamburger</option>
+    <form th:action="@{'/trickCenter?name=' + ${fox.name}}" method="post">
+        <label for="trickName">Tricks</label>
+        <select name="trickName" id="trickName">
+            <option value="write HTML">write HTML</option>
+            <option value="code in Java">code in Java</option>
+            <option value="wait for Summer after Spring">wait for Summer after Spring</option>
+            <option value="surf on the web">surf on the web</option>
+            <option value="hack into BKK">hack into BKK</option>
+            <option value="paint Yellow Road to green">paint Yellow Road to green</option>
         </select>
         <input type="submit" value="Learn">
     </form>

@@ -7,9 +7,9 @@
 <body>
     <ul>
         <li><a th:href="@{'/?name=' + ${fox.name}}">Information</a></li>
-        <li><a th:href="@{'/nutritionStore/?name=' + ${fox.name}}">Nutrition Store</a></li>
-        <li><a th:href="index.html">Trick Center</a></li>
-        <li><a href="index.html">Action history</a></li>
+        <li><a th:href="@{'/nutritionStore?name=' + ${fox.name}}">Nutrition Store</a></li>
+        <li><a th:href="@{'/trickCenter?name=' + ${fox.name}}">Trick Center</a></li>
+        <li><a th:href="@{'/actionHistory?name=' + ${fox.name}}">Action history</a></li>
     </ul>
     <form th:action="@{'/nutritionStore?name=' + ${fox.name}}" method="post">
         <label for="food">Food</label>

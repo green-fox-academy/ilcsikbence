@@ -5,6 +5,7 @@
     <title>Action history</title>
 </head>
 <body>
+    <a th:href="'/?name=' + ${fox.name}">Return to fox</a>
     <ul>
         <li th:each="change : ${changes}" th:text="${change}"></li>
     </ul>

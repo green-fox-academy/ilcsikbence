@@ -8,7 +8,7 @@
     <ul>
         <li><a th:href="'?name=' + ${fox.name}">Information</a></li>
         <li><a th:href="'nutritionStore?name=' + ${fox.name}">Nutrition Store</a></li>
-        <li><a>Trick Center</a></li>
+        <li><a th:href="'trickCenter?name=' + ${fox.name}">Trick Center</a></li>
         <li><a th:href="'actionHistory?name=' + ${fox.name}">Action History</a></li>
     </ul>
     <img src="greenfox.png" /><br>
