@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Main page</title>
 </head>
 <body>
     <ul>
         <li><a>Information</a></li>
     </ul>
-    <img src="../assets/greenfox.png"><br>
+    <img th:src="@{greenfox.png}" /><br>
     <p>This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
     <h1>Known tricks</h1>
     <ul>
