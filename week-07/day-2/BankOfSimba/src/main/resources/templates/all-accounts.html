@@ -55,6 +55,23 @@
             </tr>
         </tbody>
     </table>
+    <form action="#" th:action="@{'/show-all'}" method="post">
+        <label for="account-input">Name</label>
+            <input type="text" id="account-input" th:value="${bankAccount.name}" />
+        <label for="balance-input">Balance</label>
+            <input type="text" id="balance-input" th:value="${bankAccount.balance}" />
+        <label for="type-input">Type</label>
+            <input type="text" id="type-input" th:value="${bankAccount.animalType}" />
+        <p>It the account a King or not?</p>
+            <input type="radio" name="king-input" th:value="${bankAccount.setKing(false)}" />
+            <input type="radio" name="king-input" th:value="${bankAccount.setKing(true)}" />
 
+        <p>Is the account bad or good?</p>
+            <input type="radio" name="is-bad-input" th:value="${bankAccount.setBad(true)}" />
+            <input type="radio" name="is-bad-input" th:value="${bankAccount.setBad(false)}" />
+
+
+        <input type="submit" th:value="Add an Account to the Bank of Simba" />
+    </form>
 </body>
 </html>

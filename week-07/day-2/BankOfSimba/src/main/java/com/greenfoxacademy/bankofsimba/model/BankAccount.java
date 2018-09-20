@@ -9,16 +9,20 @@ public class BankAccount {
   private boolean isKing;
   private boolean isBad;
 
+  public BankAccount() {
+    name = null;
+    balance = 0;
+    animalType = null;
+    isKing = false;
+    isBad = false;
+  }
+
   public BankAccount(String name, double balance, String animalType, boolean isKing, boolean isBad) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.isKing = isKing;
     this.isBad = isBad;
-  }
-
-  public BankAccount() {
-
   }
 
   public String getName() {

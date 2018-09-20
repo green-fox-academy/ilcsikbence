@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Add student</title>
+    <title>Check Student</title>
 </head>
 <body>
-    <form action="/gfa/add" method="POST">
+    <h1 th:utext="${exists}" />
+    <form action="/gfa/check" method="POST">
         <label for="student">Student name:</label>
         <input type="text" id="student" name="studentName" />
-        <input type="submit" value="Add" />
+        <input type="submit" value="Check" />
     </form>
     <a href="/gfa/list">Back to list</a>
 </body>

@@ -23,8 +23,10 @@ public class BankAccountServiceImpl implements BankAccountService {
   }
 
   @Override
-  public void addAccountToList(BankAccount bankAccount) {
+  public List<BankAccount> addAccountToList() {
+    BankAccount bankAccount = new BankAccount();
     bankAccountRepository.getBankAccounts().add(bankAccount);
+    return bankAccountRepository.getBankAccounts();
   }
 
   @Override

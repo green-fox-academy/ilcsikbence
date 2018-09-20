@@ -7,4 +7,5 @@ public interface StudentService {
   void save(String student);
   List<String> findAll();
   int count();
+  String isExisting(String student);
 }

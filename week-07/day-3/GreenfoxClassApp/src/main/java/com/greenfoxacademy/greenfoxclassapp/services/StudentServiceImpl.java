@@ -27,6 +27,15 @@ public class StudentServiceImpl implements StudentService {
   }
 
   @Override
+  public String isExisting(String student) {
+    if (names.contains(student)) {
+      return student + " exists in database";
+    } else {
+      return student + " does not exist in database";
+    }
+  }
+
+  @Override
   public void save(String student) {
     names.add(student);
   }
