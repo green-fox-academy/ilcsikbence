@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class FoxClubServiceImpl implements FoxClubService {
   FoxClubRepository foxClubRepository;
+  Fox defaultFox = new Fox();
 
   @Autowired
   public FoxClubServiceImpl(FoxClubRepository foxClubRepository) {
@@ -40,5 +42,19 @@ public class FoxClubServiceImpl implements FoxClubService {
   @Override
   public void changeDrink(String name, String drink) {
     getFoxByName(name).setDrink(drink);
+  }
+
+  @Override
+  public List<String> changesList(String name) {
+    List<String> changes = new ArrayList<>();
+    if (!getFoxByName(name).equals(defaultFox)) {
+      if (!getFoxByName(name).getFood().equals(defaultFox.getFood()))
+        changes.add("food change");
+      if (!getFoxByName(name).getDrink().equals(defaultFox.getDrink()))
+        changes.add("drink change");
+      if (!getFoxByName(name).getTricks().equals(defaultFox.getTricks()))
+        changes.add("tricks change");
+    }
+    return changes;
   }
 }

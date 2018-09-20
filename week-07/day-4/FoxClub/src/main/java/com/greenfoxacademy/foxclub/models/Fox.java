@@ -1,5 +1,6 @@
 package com.greenfoxacademy.foxclub.models;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Fox {
@@ -13,6 +14,11 @@ public class Fox {
     this.tricks = tricks;
     this.food = food;
     this.drink = drink;
+  }
+
+  public Fox() {
+    this.food = "pizza";
+    this.drink = "Coca Cola";
   }
 
   public String getName() {

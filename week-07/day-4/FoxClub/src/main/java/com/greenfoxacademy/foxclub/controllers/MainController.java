@@ -55,4 +55,20 @@ public class MainController {
     foxClubService.changeDrink(name, drinkName);
     return "redirect:?name=" + name;
   }
+
+  @GetMapping(value = "/actionHistory")
+  public String getActionHistoryPage(@RequestParam(value = "name") String name, Model model) {
+    model.addAttribute("changes", foxClubService.changesList(name));
+    return "action-history";
+  }
+
+  @GetMapping(value = "/trickCenter")
+  public String getTrickCenterPage(@RequestParam(value = "name") String name, Model model) {
+    if (name == null) {
+      return "login";
+    } else {
+      model.addAttribute("fox", foxClubService.getFoxByName(name));
+      return "trick-center";
+    }
+  }
 }
