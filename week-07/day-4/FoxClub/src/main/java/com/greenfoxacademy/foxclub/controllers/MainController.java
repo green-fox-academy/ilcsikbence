@@ -38,12 +38,21 @@ public class MainController {
   }
 
   @GetMapping(value = "/nutritionStore")
-  public String getNutritionStorePage() {
-    return "nutrition-store";
+  public String getNutritionStorePage(@RequestParam(value = "name", required = false) String name, Model model) {
+    if (name == null) {
+      return "login";
+    } else {
+      model.addAttribute("fox", foxClubService.getFoxByName(name));
+      return "nutrition-store";
+    }
   }
 
   @PostMapping(value = "/nutritionStore")
-  public String postNutritionStorePage(@RequestParam(value = "food") String food, @RequestParam(value = "drink") String drink) {
-    return "nutrition-store";
+  public String postNutritionStorePage(@RequestParam(value = "foodName") String foodName,
+                                       @RequestParam(value = "drinkName") String drinkName,
+                                       @RequestParam(value = "name") String name) {
+    foxClubService.changeFood(name, foodName);
+    foxClubService.changeDrink(name, drinkName);
+    return "redirect:?name=" + name;
   }
 }

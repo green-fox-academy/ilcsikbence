@@ -31,4 +31,14 @@ public class FoxClubServiceImpl implements FoxClubService {
   public Fox getFoxByIndex(int i) {
     return foxClubRepository.getFoxList().get(i);
   }
+
+  @Override
+  public void changeFood(String name, String food) {
+    getFoxByName(name).setFood(food);
+  }
+
+  @Override
+  public void changeDrink(String name, String drink) {
+    getFoxByName(name).setDrink(drink);
+  }
 }
