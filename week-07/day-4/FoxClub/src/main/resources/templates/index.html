@@ -8,12 +8,11 @@
     <ul>
         <li><a>Information</a></li>
     </ul>
-    <img th:src="@{greenfox.png}" /><br>
-    <p>This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
+    <img src="greenfox.png" /><br>
+    <p th:utext="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
     <h1>Known tricks</h1>
     <ul>
-        <li>write HTML</li>
-        <li>code in Java</li>
+        <li th:each="trick : ${fox.getTricks()}" th:text="${trick}">
     </ul>
 </body>
 </html>
