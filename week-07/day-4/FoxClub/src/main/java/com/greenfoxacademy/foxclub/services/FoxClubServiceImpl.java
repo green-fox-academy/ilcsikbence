@@ -86,6 +86,4 @@ public class FoxClubServiceImpl implements FoxClubService {
   public List<Fox> getAllFoxes() {
     return foxClubRepository.getFoxList();
   }
-
-
 }

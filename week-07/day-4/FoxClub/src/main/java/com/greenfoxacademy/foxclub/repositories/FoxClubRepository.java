@@ -1,6 +1,7 @@
 package com.greenfoxacademy.foxclub.repositories;
 
 import com.greenfoxacademy.foxclub.models.Fox;
+import com.greenfoxacademy.foxclub.models.Message;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,8 +15,14 @@ public class FoxClubRepository {
 
   public FoxClubRepository() {
     foxList = new ArrayList<>();
-    foxList.add(new Fox("Karak", Arrays.asList("asd", "backflip"), "pizza", "Coca Cola"));
-    foxList.add(new Fox("Vuk", Arrays.asList("playing the guitar"), "pizza", "Coca Cola"));
+//    foxList.add(new Fox("Karak", Arrays.asList("asd", "backflip"), "pizza", "Coca Cola"));
+//    foxList.add(new Fox("Vuk", Arrays.asList("playing the guitar"), "pizza", "Coca Cola"));
+//    List<Message> messages = new ArrayList<>();
+//    messages.add(new Message("asd", "sdasd", "Karak"));
+//    messages.add(new Message("asd3132", "sdasd12", "Foxy"));
+//    messages.get(0).setId(0);
+//    messages.get(1).setId(1);
+//    foxList.get(1).setMessages(messages);
   }
 
 

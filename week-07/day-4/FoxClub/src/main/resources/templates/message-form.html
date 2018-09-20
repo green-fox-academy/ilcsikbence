@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Messenger of ' + ${fox.name}"></title>
+</head>
+<body>
+    <form th:action="@{'/messenger/new?name=' + ${fox.name}}" method="post">
+        <label for="recipientName">Recipient name</label>
+        <input type="text" name="recipientName" id="recipientName"><p />
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" id="title">
+        <br>
+        <label for="content">Content: (max. 255 characters)</label><br>
+        <textarea name="content" id="content" maxlength="255"></textarea><p />
+        <label for="senderName">Sent by </label>
+        <input type="hidden" th:text="${fox.name}" name="senderName" id="senderName"><p />
+        <input type="submit" value="Send message">
+    </form>
+</body>
+</html>

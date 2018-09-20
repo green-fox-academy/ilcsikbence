@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <h1 th:text="${message.title}"></h1>
+    <h2 th:text="${message.content}"></h2>
+    <p th:text="'It was sent by ' + ${message.senderName}" />
+    <a th:href="@{'/?name=' + ${fox.name}}">Go back to profile</a><br>
+    <a th:href="@{'/messenger/view?name=' + ${fox.name}}">Go back to messages</a>
+</body>
+</html>

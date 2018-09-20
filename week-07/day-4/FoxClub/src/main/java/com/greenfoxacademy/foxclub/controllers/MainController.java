@@ -1,6 +1,8 @@
 package com.greenfoxacademy.foxclub.controllers;
 
+import com.greenfoxacademy.foxclub.models.Message;
 import com.greenfoxacademy.foxclub.services.FoxClubService;
+import com.greenfoxacademy.foxclub.services.MessengerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,10 +11,12 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MainController {
   FoxClubService foxClubService;
+  MessengerService messengerService;
 
   @Autowired
-  public MainController(FoxClubService foxClubService) {
+  public MainController(FoxClubService foxClubService, MessengerService messengerService) {
     this.foxClubService = foxClubService;
+    this.messengerService = messengerService;
   }
 
   @GetMapping(value = "/")
@@ -21,7 +25,7 @@ public class MainController {
       return "redirect:login";
     else
       model.addAttribute("fox", foxClubService.getFoxByName(name));
-      return "index";
+    return "index";
 
   }
 
@@ -90,5 +94,35 @@ public class MainController {
   public String postRegistrationPage(@RequestParam(value = "foxName") String foxName) {
     foxClubService.addNewFox(foxName);
     return "redirect:login";
+  }
+
+  @GetMapping(value = "/messenger/view")
+  public String getMessagesPage(@RequestParam(value = "name") String name, Model model) {
+    model.addAttribute("fox", foxClubService.getFoxByName(name));
+    model.addAttribute("messages", messengerService.getMessages(name));
+    return "view-messages";
+  }
+
+  @GetMapping(value = "/messenger/new")
+  public String getNewMessageFormPage(@RequestParam(value = "name") String name, Model model) {
+    model.addAttribute("fox", foxClubService.getFoxByName(name));
+    return "message-form";
+  }
+
+  @PostMapping(value = "/messenger/new")
+  public String postNewMessageFormPage(@RequestParam(value = "name") String senderName,
+                                       @RequestParam(value = "recipientName") String recipientName,
+                                      @RequestParam(value = "title") String title,
+                                      @RequestParam(value = "content") String content) {
+    messengerService.sendMessage(recipientName, new Message(title, content, senderName));
+    return "redirect:/?name=" + senderName;
+  }
+
+  @GetMapping(value = "/messenger/message")
+  public String getSingleMessagePage(@RequestParam(value = "name") String name,
+                                     @RequestParam(value = "id") int id, Model model) {
+    model.addAttribute("message", messengerService.getMessages(name).get(id));
+    model.addAttribute("fox", foxClubService.getFoxByName(name));
+    return "message-viewer";
   }
 }

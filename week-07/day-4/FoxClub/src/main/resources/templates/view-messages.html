@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="'Messages of ' + ${fox.name}"></title>
+</head>
+<body>
+    <ul>
+        <li th:each="message : ${messages}">
+            <a th:text="'Title: ' + ${message.title} + ' (from: ' + ${message.senderName} +')'" th:href="@{'/messenger/message?name=' + ${fox.name} + '&id=' + ${message.id}}"></a>
+        </li>
+    </ul>
+    <a th:href="@{'/messenger/new?name=' + ${fox.name}}">Send new message</a>
+</body>
+</html>

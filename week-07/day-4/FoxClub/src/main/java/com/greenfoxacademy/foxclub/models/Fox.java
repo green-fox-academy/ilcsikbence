@@ -1,7 +1,6 @@
 package com.greenfoxacademy.foxclub.models;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Fox {
@@ -9,18 +8,21 @@ public class Fox {
   private List<String> tricks;
   private String food;
   private String drink;
+  private List<Message> messages;
 
   public Fox(String name, List<String> tricks, String food, String drink) {
     this.name = name;
     this.tricks = tricks;
     this.food = food;
     this.drink = drink;
+    this.messages = new ArrayList<>();
   }
 
   public Fox() {
     this.tricks = new ArrayList<>();
     this.food = "pizza";
     this.drink = "Coca Cola";
+    this.messages = new ArrayList<>();
   }
 
   public String getName() {
@@ -53,5 +55,13 @@ public class Fox {
 
   public void setDrink(String drink) {
     this.drink = drink;
+  }
+
+  public List<Message> getMessages() {
+    return messages;
+  }
+
+  public void setMessages(List<Message> messages) {
+    this.messages = messages;
   }
 }
