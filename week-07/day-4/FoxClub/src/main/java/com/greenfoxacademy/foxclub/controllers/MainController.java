@@ -16,14 +16,12 @@ public class MainController {
   }
 
   @GetMapping(value = "/")
-  public String redirectToLoginPage() {
-    return "login";
-  }
-
-  @GetMapping(value = "/")
-  public String getMainPage(@RequestParam(value = "name") String name, Model model) {
-    model.addAttribute("fox", foxClubService.getFoxByName(name));
-    return "index";
+  public String getMainPage(@RequestParam(value = "name", required = false) String name, Model model) {
+    if (name == null)
+      return "login";
+    else
+      model.addAttribute("fox", foxClubService.getFoxByName(name));
+      return "index";
   }
 
   @GetMapping(value = "/login")
@@ -37,5 +35,15 @@ public class MainController {
       return "redirect:?name=" + name;
     else
       return "redirect:login";
+  }
+
+  @GetMapping(value = "/nutritionStore")
+  public String getNutritionStorePage() {
+    return "nutrition-store";
+  }
+
+  @PostMapping(value = "/nutritionStore")
+  public String postNutritionStorePage(@RequestParam(value = "food") String food, @RequestParam(value = "drink") String drink) {
+    return "nutrition-store";
   }
 }

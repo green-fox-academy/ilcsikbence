@@ -16,11 +16,9 @@ public class FoxClubServiceImpl implements FoxClubService {
     this.foxClubRepository = foxClubRepository;
   }
 
-
   @Override
   public Fox getFoxByName(String name) {
     ArrayList<Fox> foxes = new ArrayList<>();
-    Fox fox;
     for (int i = 0; i < foxClubRepository.sizeOfFoxList(); i++) {
       if (getFoxByIndex(i).getName().equals(name)) {
         foxes.add(getFoxByIndex(i));
