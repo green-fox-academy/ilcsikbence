@@ -6,11 +6,14 @@
 </head>
 <body>
     <ul>
-        <li><a>Information</a></li>
+        <li><a th:href="'?name=' + ${fox.name}">Information</a></li>
+        <li><a th:href="'nutritionStore?name=' + ${fox.name}">Nutrition Store</a></li>
+        <li><a>Trick Center</a></li>
+        <li><a>Action History</a></li>
     </ul>
     <img src="greenfox.png" /><br>
-    <p th:utext="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTricks().size()} + ' tricks.'"></p>
-    <h1>Known tricks</h1>
+    <p th:utext="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTricks().size()} + ' trick(s).'"></p>
+    <h1>Known trick(s)</h1>
     <ul>
         <li th:each="trick : ${fox.getTricks()}" th:text="${trick}">
     </ul>

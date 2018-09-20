@@ -4,6 +4,7 @@ import com.greenfoxacademy.foxclub.models.Fox;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -13,10 +14,8 @@ public class FoxClubRepository {
 
   public FoxClubRepository() {
     foxList = new ArrayList<>();
-    List<String> tricks = new ArrayList<>();
-    tricks.add("asddsa");
-    foxList.add(new Fox("Karak", tricks, "pizza", "cola"));
-    foxList.add(new Fox("Vuk", tricks, "pizza", "cola"));
+    foxList.add(new Fox("Karak", Arrays.asList("asd", "backflip"), "pizza", "Coca Cola"));
+    foxList.add(new Fox("Vuk", Arrays.asList("playing the guitar"), "pizza", "Coca Cola"));
   }
 
 
