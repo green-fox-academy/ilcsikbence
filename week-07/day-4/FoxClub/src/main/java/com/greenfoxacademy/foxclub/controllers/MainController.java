@@ -125,4 +125,17 @@ public class MainController {
     model.addAttribute("fox", foxClubService.getFoxByName(name));
     return "message-viewer";
   }
+
+  @GetMapping(value = "/changeLook")
+  public String getChangeLookPage(@RequestParam(value = "name") String name, Model model) {
+    model.addAttribute("fox", foxClubService.getFoxByName(name));
+    return "change-look";
+  }
+
+  @PostMapping(value = "/changeLook")
+  public String postChangeLookPage(@RequestParam(value = "name") String name,
+                                   @RequestParam(value = "lookName") String lookName) {
+    foxClubService.changeLook(name, lookName);
+    return "redirect:/changeLook?name=" + name;
+  }
 }

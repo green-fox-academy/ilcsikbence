@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Main page</title>
+</head>
+<body>
+    <h1>Your current look:</h1>
+    <img th:src="${fox.imagePath}" /><br>
+    <form th:action="@{'changeLook?name=' + ${fox.name}}" method="post">
+    <select name="lookName">
+        <option value="glasses.jpg">Sunglasses</option>>
+        <option value="fux.jpg">Gold chain</option>>
+        <option value="cap.jpg">Cap</option>>
+        <option value="fuxglasses.jpg">Sunglasses with gold chain</option>>
+        <option value="capglasses.jpg">Cap with sunglasses</option>>
+        <option value="capfux.jpg">Cap with gold chain</option>>
+        <option value="full.jpg">SWAG</option>>
+        <option value="greenfox.jpg">Default</option>>
+    </select><br>
+    <input type="submit" value="Change look"><p />
+    </form>
+    <a th:href="'/?name=' + ${fox.name}">Back to profile</a>
+
+</body>
+</html>

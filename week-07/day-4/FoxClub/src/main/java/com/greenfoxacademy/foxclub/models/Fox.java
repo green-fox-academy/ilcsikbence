@@ -9,13 +9,15 @@ public class Fox {
   private String food;
   private String drink;
   private List<Message> messages;
+  private String imagePath;
 
-  public Fox(String name, List<String> tricks, String food, String drink) {
+  public Fox(String name, List<String> tricks, String food, String drink, String imagePath) {
     this.name = name;
     this.tricks = tricks;
     this.food = food;
     this.drink = drink;
     this.messages = new ArrayList<>();
+    this.imagePath = imagePath;
   }
 
   public Fox() {
@@ -23,6 +25,7 @@ public class Fox {
     this.food = "pizza";
     this.drink = "Coca Cola";
     this.messages = new ArrayList<>();
+    this.imagePath = "greenfox.png";
   }
 
   public String getName() {
@@ -63,5 +66,13 @@ public class Fox {
 
   public void setMessages(List<Message> messages) {
     this.messages = messages;
+  }
+
+  public String getImagePath() {
+    return imagePath;
+  }
+
+  public void setImagePath(String imagePath) {
+    this.imagePath = imagePath;
   }
 }

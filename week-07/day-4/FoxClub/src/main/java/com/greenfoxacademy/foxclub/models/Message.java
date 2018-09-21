@@ -10,7 +10,7 @@ public class Message {
     this.title = title;
     this.content = content;
     this.senderName = senderName;
-    this.id = 0;
+    id = 0;
   }
 
   public Message() {

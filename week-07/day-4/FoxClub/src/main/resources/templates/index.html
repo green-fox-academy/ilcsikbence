@@ -11,9 +11,10 @@
         <li><a th:href="'trickCenter?name=' + ${fox.name}">Trick Center</a></li>
         <li><a th:href="'actionHistory?name=' + ${fox.name}">Action History</a></li>
         <li><a th:href="'messenger/view?name=' + ${fox.name}">Messages</a></li>
+        <li><a th:href="'changeLook?name=' + ${fox.name}">Change Look</a></li>
         <li><a th:href="'login'">Log out</a></li>
     </ul>
-    <img src="greenfox.png" /><br>
+    <img th:src="${fox.imagePath}" /><br>
     <p th:utext="'This is ' + ${fox.name} + '. Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${fox.getTricks().size()} + ' trick(s).'"></p>
     <h1>Known trick(s)</h1>
     <ul>

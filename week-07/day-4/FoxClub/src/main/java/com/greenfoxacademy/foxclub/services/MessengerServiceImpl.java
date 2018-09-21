@@ -28,6 +28,7 @@ public class MessengerServiceImpl implements MessengerService {
       messagesList.get(i).setId(i);
     }
     messagesList.add(message);
+    messagesList.get(messagesList.size() - 1).setId(messagesList.size() - 1);
     foxClubService.getFoxByName(name).setMessages(messagesList);
   }
 

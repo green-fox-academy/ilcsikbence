@@ -17,5 +17,7 @@
         <input type="hidden" th:text="${fox.name}" name="senderName" id="senderName"><p />
         <input type="submit" value="Send message">
     </form>
+    <br>
+    <a th:href="@{'/messenger/view?name=' + ${fox.name}}">Back to messages</a>
 </body>
 </html>

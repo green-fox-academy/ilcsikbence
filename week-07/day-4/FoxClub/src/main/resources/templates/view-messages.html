@@ -10,6 +10,7 @@
             <a th:text="'Title: ' + ${message.title} + ' (from: ' + ${message.senderName} +')'" th:href="@{'/messenger/message?name=' + ${fox.name} + '&id=' + ${message.id}}"></a>
         </li>
     </ul>
-    <a th:href="@{'/messenger/new?name=' + ${fox.name}}">Send new message</a>
+    <a th:href="@{'/messenger/new?name=' + ${fox.name}}">Send new message</a><br>
+    <a th:href="@{'/?name=' + ${fox.name}}">Back to profile</a>
 </body>
 </html>

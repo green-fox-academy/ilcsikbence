@@ -46,6 +46,11 @@ public class FoxClubServiceImpl implements FoxClubService {
   }
 
   @Override
+  public void changeLook(String name, String imagePath) {
+    getFoxByName(name).setImagePath(imagePath);
+  }
+
+  @Override
   public List<String> changesList(String name) {
     List<String> changes = new ArrayList<>();
     if (!getFoxByName(name).equals(defaultFox)) {

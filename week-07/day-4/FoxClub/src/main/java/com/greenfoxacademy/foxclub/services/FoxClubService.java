@@ -9,6 +9,7 @@ public interface FoxClubService {
   Fox getFoxByIndex(int i);
   void changeFood(String name, String food);
   void changeDrink(String name, String drink);
+  void changeLook(String name, String imagePath);
   List<String> changesList(String name);
   void addToTricksList(String name, String trick);
   void addNewFox(String name);
