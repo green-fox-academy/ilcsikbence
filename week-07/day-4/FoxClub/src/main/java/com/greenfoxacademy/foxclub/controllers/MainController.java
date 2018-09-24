@@ -26,7 +26,6 @@ public class MainController {
     else
       model.addAttribute("fox", foxClubService.getFoxByName(name));
     return "index";
-
   }
 
   @GetMapping(value = "/login")
