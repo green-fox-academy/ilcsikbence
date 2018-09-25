@@ -17,8 +17,12 @@ public class TodoController {
   }
 
   @GetMapping(value = {"/list", "/"})
-  public String list(Model model) {
-    model.addAttribute("todos", todoRepository.findAll());
+  public String list(Model model, @RequestParam(value = "isActive", required = false) Boolean isActive) {
+    if (isActive == null) {
+      model.addAttribute("todos", todoRepository.findAll());
+    } else {
+      model.addAttribute("todos", todoRepository.findByDone(isActive));
+    }
     return "todoslist";
   }
 }
