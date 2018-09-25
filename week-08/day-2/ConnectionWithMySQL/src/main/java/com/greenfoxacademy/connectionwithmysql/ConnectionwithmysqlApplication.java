@@ -7,7 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ConnectionwithmysqlApplication implements CommandLineRunner {
+public class ConnectionwithmysqlApplication
+//    implements CommandLineRunner
+{
 
   TodoRepository todoRepository;
 
@@ -19,11 +21,11 @@ public class ConnectionwithmysqlApplication implements CommandLineRunner {
     SpringApplication.run(ConnectionwithmysqlApplication.class, args);
   }
 
-  @Override
-  public void run(String... args) throws Exception {
-    todoRepository.save(new Todo("This is a test todo line"));
-    todoRepository.save(new Todo("This is an urgent and done test todo line", true, true));
-    todoRepository.save(new Todo("This is an urgent test todo line", true, false));
-    todoRepository.save(new Todo("This is a done test todo line", false, true));
-  }
+//  @Override
+//  public void run(String... args) throws Exception {
+//    todoRepository.save(new Todo("This is a test todo line"));
+//    todoRepository.save(new Todo("This is an urgent and done test todo line", true, true));
+//    todoRepository.save(new Todo("This is an urgent test todo line", true, false));
+//    todoRepository.save(new Todo("This is a done test todo line", false, true));
+//  }
 }
