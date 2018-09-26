@@ -44,8 +44,21 @@ public class TodoController {
 
   @PostMapping(value = "/{id}/edit")
   public String postUpdateTodoPage(@PathVariable(value = "id") long id,
-                                   @RequestParam(value = "todoTitle") String todoTitle) {
+                                   @RequestParam(value = "todoTitle") String todoTitle,
+                                   @RequestParam(value = "todoUrgent", required = false) Boolean todoUrgent,
+                                   @RequestParam(value = "todoDone", required = false) Boolean todoDone) {
     todoRepository.findById(id).setTitle(todoTitle);
+
+    if (todoUrgent != null)
+      todoRepository.findById(id).setUrgent(todoUrgent);
+    else
+      todoRepository.findById(id).setUrgent(false);
+
+    if (todoDone != null)
+      todoRepository.findById(id).setDone(todoDone);
+    else
+      todoRepository.findById(id).setDone(false);
+
     todoRepository.save(todoRepository.findById(id));
     return "redirect:/todo/";
   }

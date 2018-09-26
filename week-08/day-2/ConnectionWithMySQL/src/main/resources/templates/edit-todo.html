@@ -9,7 +9,12 @@
 <form th:action="@{'/todo/' + ${todo.id} + '/edit'}" method="post">
     <label for="todoTitle">Todo Description</label>
     <input type="text" name="todoTitle" id="todoTitle" th:value="${todo.getTitle()}"><br>
+    <label for="todoUrgent">Urgent</label>
+    <input type="checkbox" name="todoUrgent" id="todoUrgent"><br>
+    <label for="todoDone">Done</label>
+    <input type="checkbox" name="todoDone" id="todoDone"><br>
     <input type="submit" value="Submit">
 </form>
+<a href="/todo/">Cancel</a>
 </body>
 </html>
