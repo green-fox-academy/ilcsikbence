@@ -9,6 +9,7 @@ public class Doubling {
   }
 
   public Doubling() {
+
   }
 
   public int getRecieved() {
@@ -27,4 +28,5 @@ public class Doubling {
   public void setResult(int result) {
     this.result = result;
   }
+
 }
