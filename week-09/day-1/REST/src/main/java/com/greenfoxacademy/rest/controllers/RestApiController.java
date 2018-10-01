@@ -1,8 +1,11 @@
 package com.greenfoxacademy.rest.controllers;
 
+import com.greenfoxacademy.rest.modells.AppendA;
 import com.greenfoxacademy.rest.modells.Doubling;
 import com.greenfoxacademy.rest.modells.Error;
 import com.greenfoxacademy.rest.modells.WelcomeMessage;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,7 +34,11 @@ public class RestApiController {
 
   @GetMapping(value = "/appenda/{appendable}")
   public Object getAppendA(@PathVariable(value = "appendable") String appendable) {
-
+    if (appendable == null) {
+      return ResponseEntity.status(HttpStatus.NOT_FOUND);
+    }
+    return new AppendA(appendable);
   }
 
+  
 }
