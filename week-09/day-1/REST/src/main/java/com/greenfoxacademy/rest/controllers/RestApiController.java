@@ -1,15 +1,10 @@
 package com.greenfoxacademy.rest.controllers;
 
-import com.greenfoxacademy.rest.modells.AppendA;
-import com.greenfoxacademy.rest.modells.Doubling;
+import com.greenfoxacademy.rest.modells.*;
 import com.greenfoxacademy.rest.modells.Error;
-import com.greenfoxacademy.rest.modells.WelcomeMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestApiController {
@@ -40,5 +35,26 @@ public class RestApiController {
     return new AppendA(appendable);
   }
 
-  
+  @PostMapping(value = "/dountil/{action}")
+  public Object postDoUntil(@PathVariable(value = "action") String action,
+                            @RequestBody UntilNumber until) {
+
+    if (until == null) {
+      return new Error("Please provide a number");
+    }
+
+    if (action.equals("sum")) {
+      DoUntil doUntil = new DoUntil();
+      doUntil.setResult(doUntil.sum(until.getUntil()));
+      return doUntil;
+    }
+
+    if (action.equals("factor")) {
+      DoUntil doUntil = new DoUntil();
+      doUntil.setResult(doUntil.factor(until.getUntil()));
+      return doUntil;
+    }
+
+    return new Error("Please provide an action!");
+  }
 }
