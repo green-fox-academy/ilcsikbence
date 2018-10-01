@@ -2,8 +2,9 @@ package com.greenfoxacademy.rest.controllers;
 
 import com.greenfoxacademy.rest.modells.Doubling;
 import com.greenfoxacademy.rest.modells.Error;
-import com.greenfoxacademy.rest.modells.Greeter;
+import com.greenfoxacademy.rest.modells.WelcomeMessage;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,11 +23,14 @@ public class RestApiController {
   @GetMapping(value = "/greeter")
   public Object getGreeting(@RequestParam(value = "name", required = false) String name,
                             @RequestParam(value = "title", required = false) String title) {
-    if (name.isEmpty() || title.isEmpty()) {
+    if (name == null || title == null) {
       return new Error("Please provide a name!");
     }
+    return new WelcomeMessage(name, title);
+  }
 
-    return new Greeter(name, title);
+  @GetMapping(value = "/appenda/{appendable}")
+  public Object getAppendA(@PathVariable(value = "appendable") String appendable) {
 
   }
 
