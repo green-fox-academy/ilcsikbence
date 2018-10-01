@@ -22,11 +22,12 @@ public class RestApiController {
   @GetMapping(value = "/greeter")
   public Object getGreeting(@RequestParam(value = "name", required = false) String name,
                             @RequestParam(value = "title", required = false) String title) {
-    if (name.equals("") || title.equals("")) {
+    if (name.isEmpty() || title.isEmpty()) {
       return new Error("Please provide a name!");
-    } else {
-      return new Greeter(name, title);
     }
+
+    return new Greeter(name, title);
+
   }
 
 }
