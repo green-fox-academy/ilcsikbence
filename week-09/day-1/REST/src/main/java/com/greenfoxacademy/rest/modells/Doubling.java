@@ -1,27 +1,27 @@
 package com.greenfoxacademy.rest.modells;
 
 public class Doubling {
-  private int recieved;
+  private int received;
   private int result;
 
-  public Doubling(int recieved) {
-    this.recieved = recieved;
+  public Doubling(int received) {
+    this.received = received;
   }
 
   public Doubling() {
 
   }
 
-  public int getRecieved() {
-    return recieved;
+  public int getReceived() {
+    return received;
   }
 
-  public void setRecieved(int recieved) {
-    this.recieved = recieved;
+  public void setReceived(int received) {
+    this.received = received;
   }
 
   public int getResult() {
-    result = recieved * 2;
+    result = received * 2;
     return result;
   }
 
