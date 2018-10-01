@@ -2,12 +2,21 @@ package com.greenfoxacademy.rest.controllers;
 
 import com.greenfoxacademy.rest.modells.*;
 import com.greenfoxacademy.rest.modells.Error;
+import com.greenfoxacademy.rest.services.ArrayHandlerOperations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RestApiController {
+
+  ArrayHandlerOperations operations;
+
+  @Autowired
+  public RestApiController(ArrayHandlerOperations operations) {
+    this.operations = operations;
+  }
 
   @GetMapping(value = "/doubling")
   public Object getDoublingValues(@RequestParam(value = "input", required = false) Integer input) {
@@ -57,4 +66,21 @@ public class RestApiController {
 
     return new Error("Please provide an action!");
   }
+
+  @PostMapping(value = "/arrays")
+  public Object postArrayHandlerOperations(@RequestBody ArrayHandler arrayHandler) {
+    if (arrayHandler.getNumbers() == null || arrayHandler.getWhat() == null)
+      return new Error("Please provide what to do with the numbers!");
+
+    if (arrayHandler.getWhat().equals("sum"))
+      return operations.sumOfElements(arrayHandler.getNumbers());
+    else if (arrayHandler.getWhat().equals("multiply"))
+      return operations.multiplicationOfElements(arrayHandler.getNumbers());
+    else if (arrayHandler.getWhat().equals("double"))
+      return operations.doubleOfElements(arrayHandler.getNumbers());
+
+    return new Error("Please provide the numbers");
+  }
+
+
 }
