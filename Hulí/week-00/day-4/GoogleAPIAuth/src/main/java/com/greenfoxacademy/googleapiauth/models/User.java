@@ -1,57 +1,75 @@
 package com.greenfoxacademy.googleapiauth.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "users")
 public class User {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
-  private String first_name;
-  private String last_name;
-  private String email;
+    @Id
+    @GeneratedValue
+    private int id;
+    private String fullName;
+    private String email;
+    private String principalId;
+    private String photo;
+    private LocalDateTime created;
+    private LocalDateTime lastLogin;
 
-  public User(String first_name, String last_name, String email) {
-    this.first_name = first_name;
-    this.last_name = last_name;
-    this.email = email;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public User() {
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public long getId() {
-    return id;
-  }
+    public String getFullName() {
+        return fullName;
+    }
 
-  public void setId(long id) {
-    this.id = id;
-  }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-  public String getFirst_name() {
-    return first_name;
-  }
+    public String getEmail() {
+        return email;
+    }
 
-  public void setFirst_name(String first_name) {
-    this.first_name = first_name;
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  public String getLast_name() {
-    return last_name;
-  }
+    public String getPrincipalId() {
+        return principalId;
+    }
 
-  public void setLast_name(String last_name) {
-    this.last_name = last_name;
-  }
+    public void setPrincipalId(String principalId) {
+        this.principalId = principalId;
+    }
 
-  public String getEmail() {
-    return email;
-  }
+    public String getPhoto() {
+        return photo;
+    }
 
-  public void setEmail(String email) {
-    this.email = email;
-  }
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(LocalDateTime lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
 }

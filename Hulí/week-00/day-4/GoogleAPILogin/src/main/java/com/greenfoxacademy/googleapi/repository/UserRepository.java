@@ -1,10 +1,9 @@
-package com.greenfoxacademy.googleapiauth.repository;
+package com.greenfoxacademy.googleapi.repository;
 
-import com.greenfoxacademy.googleapiauth.models.User;
+import com.greenfoxacademy.googleapi.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
-  User findByPrincipalId(String id);
 }

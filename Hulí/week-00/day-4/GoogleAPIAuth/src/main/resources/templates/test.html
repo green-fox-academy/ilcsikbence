@@ -5,6 +5,11 @@
     <title>Test</title>
 </head>
 <body>
-<p>This is a test</p>
+<form action="/connect/google" method="POST" style="display: inline">
+    <input type="hidden" name="scope" value="profile email" />
+    <button type="submit" class="btn btn-danger">
+        Google <span class="fa fa-google-plus"></span>
+    </button>
+</form>
 </body>
 </html>
