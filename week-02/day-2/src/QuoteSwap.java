@@ -11,28 +11,19 @@ public class QuoteSwap{
     // Create a method called quoteSwap().
 
     // Also, print the sentence to the output with spaces in between.
-//    quoteSwap(list);
+    quoteSwap(list);
     // Expected output: "What I cannot create I do not understand."
-
-    System.out.println(quoteSwap(list));
-
 
   }
 
-  public static ArrayList quoteSwap (ArrayList list){
-
-//    String word1 = list.get(2).toString();
-//    String word2 = list.get(5).toString();
-//
-//    list.set(2, word2);
-//    list.set(5, word1);
-
+  public static void quoteSwap (ArrayList<String> list){
     Collections.swap(list, 2, 5);
+    String quote = "";
+    for (int i = 0; i < list.size(); i++) {
+      quote += list.get(i) + " ";
+    }
 
-//    for (int i = 0; i < list.size(); i++) {
-//      System.out.print(list.get(i));
-//    }
-
-    return list;
+    quote = quote.substring(0, quote.length() - 1);
+    System.out.println(quote);
   }
 }
