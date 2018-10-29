@@ -11,7 +11,7 @@ public class SayHello {
 
   public void sayHelloTo(String name){
 
-    System.out.println(name);
+    System.out.println("Hello " + name);
 
   }
 }
