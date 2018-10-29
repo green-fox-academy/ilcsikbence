@@ -14,7 +14,6 @@ public class Reverse {
     String reversedBack = reversed;
 
     for (int i = reversedBack.length() - 1; i >= 0; i--) {
-
       System.out.print(reversed.charAt(i));
     }
   }
