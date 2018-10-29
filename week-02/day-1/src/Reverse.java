@@ -9,11 +9,9 @@ public class Reverse {
     int aj[] = {3, 4, 5, 6, 7, 8, 9};
     reverse(aj);
 
-
   }
 
   public static void reverse(int aj[]) {
-
     for (int i = 0; i < aj.length / 2; i++) {
       int temp = aj[i];
       aj[i] = aj[aj.length - i - 1];
@@ -23,7 +21,6 @@ public class Reverse {
          ) {
       System.out.print(a + " ");
     }
-
   }
-}
 
+}
