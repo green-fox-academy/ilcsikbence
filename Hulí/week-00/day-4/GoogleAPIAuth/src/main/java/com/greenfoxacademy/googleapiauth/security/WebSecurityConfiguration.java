@@ -16,7 +16,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -62,31 +61,32 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         .authenticated();
   }
 
-  @Bean
-  public PrincipalExtractor principalExtractor(UserRepository userRepository) {
-    return map -> {
-      String principalId = (String) map.get("id");
-      User user = userRepository.findByPrincipalId(principalId);
-      if (user == null) {
-        LOGGER.info("No user found, generating profile for {" + principalId + "}");
-        user = new User();
-        user.setPrincipalId(principalId);
-        user.setCreated(LocalDateTime.now());
-        String email = (String) map.get("email");
-        if (!email.endsWith("@gmail.com")) {
-          return null;
-        }
-        user.setEmail((String) map.get("email"));
-        user.setFullName((String) map.get("name"));
-        user.setPhoto((String) map.get("picture"));
-        user.setLastLogin(LocalDateTime.now());
-      } else {
-        user.setLastLogin(LocalDateTime.now());
-      }
-      userRepository.save(user);
-      return user;
-    };
-  }
-
+//  @Bean
+//  public PrincipalExtractor principalExtractor(UserRepository userRepository) {
+//    return map -> {
+//      String principalId = (String) map.get("id");
+//      User user = userRepository.findByPrincipalId(principalId);
+//      if (user == null) {
+//        LOGGER.info("No user found, generating profile for {" + principalId + "}");
+//        user = new User();
+//        user.setPrincipalId(principalId);
+//        user.setCreated(LocalDateTime.now());
+//        String email = (String) map.get("email");
+//        if (!email.endsWith("@gmail.com")) {
+//          return null;
+//        }
+//        user.setEmail((String) map.get("email"));
+//        user.setFullName((String) map.get("name"));
+//        user.setPhoto((String) map.get("picture"));
+//        user.setLastLogin(LocalDateTime.now());
+//        user.setFirstName((String) map.get("given_name"));
+//        user.setLastName((String) map.get("family_name"));
+//      } else {
+//        user.setLastLogin(LocalDateTime.now());
+//      }
+//      userRepository.save(user);
+//      return user;
+//    };
+//  }
 
 }
