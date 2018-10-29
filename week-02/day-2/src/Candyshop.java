@@ -18,8 +18,6 @@ public class Candyshop{
   }
 
   public static ArrayList sweets(ArrayList arrayList) {
-
-//    String numToString = arrayList.get(arrayList.indexOf(2)).toString();
     arrayList.set(arrayList.indexOf(2), "Croissant");
     arrayList.set(arrayList.indexOf(false), "Ice cream");
 

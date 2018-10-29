@@ -8,7 +8,7 @@ public class AppendLetter {
 
     // The output should be: "boa", "anaconda", "koala", "panda", "zebra"
     System.out.println(appendA(far));
-    
+
   }
 
   public static ArrayList appendA(ArrayList far) {
