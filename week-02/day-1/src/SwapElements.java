@@ -11,5 +11,5 @@ public class SwapElements {
       System.out.println(s);
     }
   }
-  
+
 }
