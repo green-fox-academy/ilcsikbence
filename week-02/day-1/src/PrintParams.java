@@ -8,15 +8,12 @@ public class PrintParams {
     // Examples
     // printParams("first")
     // printParams("first", "second")
-    // printParams("first", "second", "third", "fourh")
+    // printParams("first", "second", "third", "fourth")
     // ...
-
-
 
     String[] numbers = {"first", "second", "third", "fourth", "fifth"};
 
     printParams(numbers);
-
 
   }
 
@@ -35,7 +32,6 @@ public class PrintParams {
         zero += "\"";
       }
     }
-
     System.out.println(zero);
 
   }
