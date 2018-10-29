@@ -11,9 +11,7 @@ public class DoubleItems {
   public static void doubleValues(int numList[]){
 
     for (int i = 0; i < numList.length; i++) {
-
       numList[i] = numList[i] * 2;
-
       System.out.println(numList[i]);
     }
   }
