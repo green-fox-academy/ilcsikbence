@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Carrier implements Movable {
+public class Carrier implements Movable, Fightable {
   private int storedAmmo;
   private int healthPoint;
   private List<Movable> movables;
