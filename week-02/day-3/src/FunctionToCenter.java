@@ -10,33 +10,13 @@ public class FunctionToCenter {
     // and draws a line from that point to the center of the canvas.
     // Fill the canvas with lines from the edges, every 20 px, to the center.
 
-    int heightZero = 0;
-    int heightMax = HEIGHT;
-    int widthZero = 0;
-    int widthMax = WIDTH;
-    int x0 = 0;
-    int y0 = 0;
+    for (int i = 0; i <= WIDTH / 20; i++) {
+      drawLines(0, i * 20, graphics);
+      drawLines(WIDTH, i * 20, graphics);
+      drawLines(i * 20, 0, graphics);
+      drawLines(i * 20, HEIGHT, graphics);
+    }
 
-    // Left side
-    for (int i = 0; i <= HEIGHT / 20; i++) {
-      drawLines(0, heightZero, graphics);
-      heightZero += 20;
-    }
-    // Right side
-    for (int i = 1; i <= HEIGHT / 20; i++) {
-      drawLines(WIDTH, heightMax, graphics);
-      heightMax -= 20;
-    }
-    // Bottom side
-    for (int k = 0; k <= WIDTH / 20; k++) {
-      drawLines(widthZero, heightZero, graphics);
-      widthZero += 20;
-    }
-    // Upper side
-    for (int k = 0; k <= WIDTH / 20; k++) {
-      drawLines(x0, y0, graphics);
-       x0 += 20;
-    }
   }
 
   public static void drawLines(int x, int y, Graphics graphics) {
@@ -45,7 +25,7 @@ public class FunctionToCenter {
 
   // Don't touch the code below
   static int WIDTH = 320;
-  static int HEIGHT = 343;
+  static int HEIGHT = 320;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");

@@ -15,8 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class APIController {
-  @Autowired
-  UserRepository userRepository;
+  @Autowired UserRepository userRepository;
 
   @GetMapping("/users")
   List<User> getUsers(User user) {
@@ -30,7 +29,8 @@ public class APIController {
 
   @GetMapping("/getEmail")
   public Object user(OAuth2Authentication authentication) {
-    LinkedHashMap<String, Object> properties = (LinkedHashMap<String, Object>) authentication.getUserAuthentication().getDetails();
+    LinkedHashMap<String, Object> properties =
+        (LinkedHashMap<String, Object>) authentication.getUserAuthentication().getDetails();
     System.out.println(properties.get("email"));
     return properties.get("email");
   }

@@ -1,14 +1,13 @@
 import javax.swing.*;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Scanner;
+import java.util.List;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class RainbowBoxFunction {
+public class RainbowBoxFunction2 {
   public static void mainDraw(Graphics graphics) {
     // Create a square drawing function that takes 2 parameters:
     // The square size, and the fill color,
@@ -17,6 +16,8 @@ public class RainbowBoxFunction {
 
     HashMap<Integer, Color> hashColors = new HashMap<>();
 
+//    List<Color> rainbow = Arrays.asList(Color.RED, Color.GREEN);
+
     hashColors.put(1, Color.RED);
     hashColors.put(2, Color.ORANGE);
     hashColors.put(3, Color.YELLOW);
@@ -24,6 +25,7 @@ public class RainbowBoxFunction {
     hashColors.put(5, Color.BLUE);
     hashColors.put(6, new Color(111, 0, 255));
     hashColors.put(7, new Color(127, 0, 255));
+
 
     int input2 = 0;
     int height = 320;
@@ -34,6 +36,9 @@ public class RainbowBoxFunction {
       rainbowSquare(input, input2, hashColors, graphics);
       input -= 40;
     }
+
+    graphics.drawRect(0, 0 , 200, 200);
+
   }
 
   public static void rainbowSquare(int input, int input2, HashMap<Integer, Color> hashColors, Graphics graphics) {
