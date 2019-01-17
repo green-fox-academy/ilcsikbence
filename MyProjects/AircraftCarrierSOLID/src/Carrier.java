@@ -22,6 +22,15 @@ public class Carrier implements Movable, Fightable {
     this.movables.add(movable);
   }
 
+  public void refill() {
+    if (storedAmmo > 0) {
+      movables.stream()
+          .filter(Fillable.class::isInstance)
+          .map(Fillable.class::cast)
+          .forEach(movable -> movable.fill(storedAmmo));
+    }
+  }
+
   public int getStoredAmmo() {
     return storedAmmo;
   }
