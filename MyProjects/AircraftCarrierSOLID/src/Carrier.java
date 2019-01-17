@@ -31,6 +31,19 @@ public class Carrier implements Movable, Fightable {
     }
   }
 
+
+  public Map<String, String> getStatus() {
+    Map<String, String> status = new HashMap<>();
+    for (Field field : Carrier.class.getDeclaredFields()) {
+      try {
+        status.put(field.getName(), field.get(this) + "");
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      }
+    }
+    return status;
+  }
+
   public int getStoredAmmo() {
     return storedAmmo;
   }
