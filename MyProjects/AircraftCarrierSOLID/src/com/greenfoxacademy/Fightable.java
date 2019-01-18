@@ -1,4 +1,6 @@
-public abstract class Fightable {
+package com.greenfoxacademy;
+
+public abstract class Fightable extends Vehicle {
   protected int healthPoint;
 
   public Fightable(int healthPoint) {
@@ -14,4 +16,5 @@ public abstract class Fightable {
   }
 
   abstract void fight(Fightable fightable);
+
 }
