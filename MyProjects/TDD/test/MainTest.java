@@ -20,7 +20,7 @@ public class MainTest {
     String b = "World!";
 
     String expectedResult = "Hello World!";
-    
+
     assertEquals(expectedResult, Main.concatenateTwoStrings(a, b));
   }
 
