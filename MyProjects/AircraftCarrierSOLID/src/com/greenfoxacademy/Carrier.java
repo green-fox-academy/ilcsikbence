@@ -31,7 +31,7 @@ public class Carrier extends Fightable implements Movable {
 
   public Map<String, String> getStatus() {
     Map<String, String> fields = new HashMap<>();
-    fields.put("type", this.getClass().getName());
+    fields.put("type", this.getClass().getSimpleName());
     try {
       getFields(fields, this.getClass());
     } catch (IllegalAccessException e) {
