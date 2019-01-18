@@ -25,4 +25,7 @@ public class Dog {
     return thirst;
   }
 
+  public void feed() {
+    return;
+  }
 }
