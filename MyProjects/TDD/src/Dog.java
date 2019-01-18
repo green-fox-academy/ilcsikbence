@@ -26,6 +26,6 @@ public class Dog {
   }
 
   public void feed() {
-    return;
+    this.hunger--;
   }
 }
