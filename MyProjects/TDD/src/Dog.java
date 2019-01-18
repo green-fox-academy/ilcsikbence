@@ -34,6 +34,7 @@ public class Dog {
   }
 
   public void play() {
-    return;
+    this.hunger++;
+    this.thirst++;
   }
 }
