@@ -16,6 +16,13 @@ public class MainTest {
     carrier.addMovable(fighterJet);
   }
 
+  @Test
+  public void testAddMovableToCarrierWithOneObject() {
+    carrier.addMovable(new FighterJet(200, 300, 400));
+    int expectedLengthOfList = 2;
+    assertEquals(expectedLengthOfList, carrier.getMovables().size());
+  }
+
   @After
   public void destroy() {
     carrier.setMovables(null);
