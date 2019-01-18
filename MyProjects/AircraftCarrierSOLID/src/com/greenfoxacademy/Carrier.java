@@ -29,10 +29,14 @@ public class Carrier extends Fightable implements Movable {
     }
   }
 
-  public Map<String, String> getStatus() throws IllegalAccessException {
+  public Map<String, String> getStatus() {
     Map<String, String> fields = new HashMap<>();
     fields.put("type", this.getClass().getName());
-    getFields(fields, this.getClass());
+    try {
+      getFields(fields, this.getClass());
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    }
 
     return fields;
   }
@@ -50,11 +54,7 @@ public class Carrier extends Fightable implements Movable {
   }
 
   public void readStatus() {
-    try {
-      getStatus().forEach((s, s2) -> System.out.println(s + ": " + s2));
-    } catch (IllegalAccessException e) {
-      e.printStackTrace();
-    }
+    getStatus().forEach((s, s2) -> System.out.println(s + ": " + s2));
   }
 
   @Override
