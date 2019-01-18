@@ -14,4 +14,14 @@ public class MainTest {
     assertEquals(expectedResult, Main.sumTheseNumbers(a, b));
   }
 
+  @Test
+  public void testConcatenateTwoStrings() {
+    String a = "Hello ";
+    String b = "World!";
+
+    String expectedResult = "Hello World!";
+    
+    assertEquals(expectedResult, Main.concatenateTwoStrings(a, b));
+  }
+
 }
