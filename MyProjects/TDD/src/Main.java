@@ -4,6 +4,6 @@ public class Main {
   }
 
   public static int sumTheseNumbers(int a, int b) {
-    return 0;
+    return a + b;
   }
 }
