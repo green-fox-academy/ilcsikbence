@@ -23,6 +23,17 @@ public class MainTest {
     assertEquals(expectedLengthOfList, carrier.getMovables().size());
   }
 
+  @Test
+  public void testReloadAllWithOneElement() {
+    carrier.reloadAll();
+    int expectedAmountOfAircraftAmmo = 300;
+    FighterJet fighterJet = (FighterJet) carrier.getMovables().get(0);
+    assertEquals(expectedAmountOfAircraftAmmo, fighterJet.getCurrentAmmo());
+
+    int expectedAmountOfCarrierAmmo = 1900;
+    assertEquals(expectedAmountOfCarrierAmmo, carrier.getStoredAmmo());
+  }
+
   @After
   public void destroy() {
     carrier.setMovables(null);
