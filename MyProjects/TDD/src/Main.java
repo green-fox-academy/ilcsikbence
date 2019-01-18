@@ -8,6 +8,7 @@ public class Main {
   }
 
   public static String concatenateTwoStrings(String a, String b) {
-    return "";
+    String result = a + b;
+    return result;
   }
 }
