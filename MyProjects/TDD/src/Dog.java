@@ -32,4 +32,8 @@ public class Dog {
   public void water() {
     this.thirst--;
   }
+
+  public void play() {
+    return;
+  }
 }

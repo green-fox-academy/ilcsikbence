@@ -37,7 +37,7 @@ public class DogTest {
   public void testPlaying() {
     assertEquals(10, dog.getThirst());
     assertEquals(10, dog.getHunger());
-    
+
     int expectedHunger = 11;
     int expectedThirst = 11;
 
