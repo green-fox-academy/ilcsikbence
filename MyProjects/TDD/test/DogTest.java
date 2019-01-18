@@ -13,6 +13,17 @@ public class DogTest {
     dog = new Dog("Fluffy");
   }
 
+  @Test
+  public void testFeeding() {
+    assertEquals(10, dog.getHunger());
+
+    int expectedResult = 9;
+    dog.feed();
+
+    assertEquals(expectedResult, dog.getHunger());
+
+  }
+
   @After
   public void destroy() {
     dog = null;
