@@ -21,7 +21,16 @@ public class DogTest {
     dog.feed();
 
     assertEquals(expectedResult, dog.getHunger());
+  }
 
+  @Test
+  public void testWatering() {
+    assertEquals(10, dog.getThirst());
+
+    int expectedResult = 9;
+    dog.water();
+
+    assertEquals(expectedResult, dog.getThirst());
   }
 
   @After
