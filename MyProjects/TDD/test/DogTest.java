@@ -33,6 +33,20 @@ public class DogTest {
     assertEquals(expectedResult, dog.getThirst());
   }
 
+  @Test
+  public void testPlaying() {
+    assertEquals(10, dog.getThirst());
+    assertEquals(10, dog.getHunger());
+    
+    int expectedHunger = 11;
+    int expectedThirst = 11;
+
+    dog.play();
+
+    assertEquals(expectedHunger, dog.getHunger());
+    assertEquals(expectedThirst, dog.getThirst());
+  }
+
   @After
   public void destroy() {
     dog = null;
