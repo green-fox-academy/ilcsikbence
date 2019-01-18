@@ -28,4 +28,8 @@ public class Dog {
   public void feed() {
     this.hunger--;
   }
+
+  public void water() {
+    return;
+  }
 }
