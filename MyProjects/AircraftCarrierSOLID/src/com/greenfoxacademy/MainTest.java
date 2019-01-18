@@ -34,6 +34,24 @@ public class MainTest {
     assertEquals(expectedAmountOfCarrierAmmo, carrier.getStoredAmmo());
   }
 
+  @Test
+  public void testRefillAllWithMoreElement() {
+    FighterJet fighterJet = new FighterJet(100,500,600);
+    carrier.addMovable(fighterJet);
+
+    carrier.reloadAll();
+    int expectedAmountOfAircraftAmmoOfFirstAircraft = 300;
+    int expectedAmountOfAircraftAmmoOfSecondAircraft = 500;
+    FighterJet firstFighterJet = (FighterJet) carrier.getMovables().get(0);
+    FighterJet secondFighterJet = (FighterJet) carrier.getMovables().get(1);
+    assertEquals(expectedAmountOfAircraftAmmoOfFirstAircraft, firstFighterJet.getCurrentAmmo());
+    assertEquals(expectedAmountOfAircraftAmmoOfSecondAircraft, secondFighterJet.getCurrentAmmo());
+
+    int expectedAmountOfCarrierAmmo = 1500;
+
+    assertEquals(expectedAmountOfCarrierAmmo, carrier.getStoredAmmo());
+  }
+
   @After
   public void destroy() {
     carrier.setMovables(null);
