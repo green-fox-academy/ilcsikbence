@@ -11,11 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Board extends JComponent implements KeyListener, ActionListener {
 
+  Timer timer = new Timer(60, this);
   public static final int WINDOW_WIDTH = 720;
   public static final int WINDOW_HEIGHT = 576;
 
   public Board() {
-
+    timer.start();
     setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
     setBounds(0, 0, 720, 576);
     setVisible(true);
@@ -23,6 +24,9 @@ public class Board extends JComponent implements KeyListener, ActionListener {
   }
 
   public void actionPerformed(ActionEvent ev) {
+    if (ev.getSource() == timer) {
+
+    }
   }
 
   @Override
